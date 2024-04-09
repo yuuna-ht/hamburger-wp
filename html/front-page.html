@@ -9,26 +9,34 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https: //fonts.googleapis.com/css2?family=M+PLUS+1p&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap " rel="スタイルシート">
-        <link href="../css/ress.css" rel="stylesheet">
+        <link href="../scss/foundation/_ress.scss" rel="stylesheet">
         <link href="../css/style.css" rel="stylesheet">
         <link rel="shortcut icon" href="../images/H.ico">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="../js/script.js" defer></script> 
     </head>
 <body>
-    <div class="container">
-        <header="l-header">
-
+    <div id="p-container">
+        <header class="l-header c-header__grid">
+            <div class="p-header__inner">
+                <button class="p-header__menu c-button is-active">Menu</button>
+                <h1 class="p-header__logo c-logo"><a href="#" class="c-link">Hamburger</a></h1>
+                <form class="search-form" action="#" method="get">
+                    <label class="search-reader-text" for="seach">検索</label>
+                    <input class="search-form__keyword" type="search" name="search" id="search"><i class="fa-solid fa-magnifying-glass"></i>
+                    <input class="search-form__submit" type="submit" value="検索">
+                </form>
+            </div>
         </header>
-        <main="l-main">
+        <main class="l-main c-main__grid">
 
         </main>
-        <aside="l-sidebar">
+        <aside class="l-sidebar c-sidebar__grid">
 
         </aside>
-        <footer="l-footer">
+        <footer class="l-footer c-footer__grid">
 
         </footer>
     </div>
-    <script src="../js/main.js"></script>
 </body>
 </html>

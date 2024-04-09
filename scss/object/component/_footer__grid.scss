@@ -1,0 +1,6 @@
+@use "../../foundation/global" as *;
+
+.c-footer__grid {
+    grid-row: 3;
+    grid-column: 1/3;
+}

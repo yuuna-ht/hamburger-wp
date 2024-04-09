@@ -1,0 +1,5 @@
+"stylePreprocessorOptions": {
+    "includePaths": [
+        "node_modules/@hoge"
+    ]
+}

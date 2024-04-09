@@ -1,1 +1,5 @@
-@use "/scss/foundation/global" as *;
+@use "../foundation/global" as *;
+
+.l-header {
+    background-color: blue;
+}
