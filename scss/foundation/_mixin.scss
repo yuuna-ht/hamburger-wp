@@ -1,0 +1,18 @@
+//メディアクエリ
+
+$tablet: 600px;
+$pc: 1025px;
+
+@mixin breakpoint($point) {
+    @if $point==tablet {
+        @media (min-width: $tablet) {  //600px以上でtabletサイズ
+            @content ;
+        }
+    }
+
+    @if $point==pc {
+        @media (min-width: $pc) { //1025px以上でPCサイズ
+            @content ;
+        }        
+    }
+}

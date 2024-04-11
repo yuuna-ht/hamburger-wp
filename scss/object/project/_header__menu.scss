@@ -1,0 +1,12 @@
+@use "../../foundation/global" as *;
+
+.p-header__menu {
+    color: $color--gray;
+    text-align: right;
+    margin-top: 8px;
+    margin-right: 8px;
+    @include breakpoint(tablet) {
+        margin-top: 20px;
+        margin-right: 25px;
+    }
+}

@@ -1,5 +1,16 @@
 @use "../foundation/global" as *;
 
 .l-sidebar {
-    background-color: green;
+    position: fixed;
+    top: 0;
+    right: -87.47%; /* 非表示 */
+    width: 87.47%;
+    height: 100%;
+    background-color: #fff; /* サイドバーの背景色 */
+    transition: right 0.3s ease-in-out; /* スライドイン/スライドアウトのアニメーション */
 }
+
+.l-sidebar.is-open {
+    right: 0; /* スライドイン */
+}
+
