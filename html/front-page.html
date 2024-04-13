@@ -19,17 +19,20 @@
     <div class="p-overlay js-menu-event"></div>
     <div id="p-container">
         <header class="l-header c-header__grid">
+            <div class="p-header__inner">
                 <div class="p-header__menu">
-                    <button class="c-nav__button c-nav__button--gray">Menu</button>
+                    <button class="c-nav__button">Menu</button>
                 </div>
-                <div class="p-header__inner">
-                    <h1 class="p-header__logo c-logo"><a href="#">Hamburger</a></h1>
-                    <form class="search-form" action="#" method="get">
-                        <label class="search-reader-text" for="search">検索</label>
-                        <input class="search-form__keyword" type="search" name="search" id="search"><i class="fa-solid fa-magnifying-glass"></i>
-                        <input class="search-form__submit" type="submit" value="検索">
-                    </form>
-                </div>
+                <h1 class="p-header__logo"><a href="#" class="c-logo">Hamburger</a></h1>
+                <form class="p-search-form" action="#" method="get">
+                    <label class="c-reader-text" for="search">検索</label>
+                    <div class="p-search-box">
+                        <input class="p-search-form__keyword" type="search" name="search" id="search">
+                        <img src="../images/search.ico" alt="虫眼鏡" class="p-search-icon">
+                    </div>
+                    <input class="c-search-form__submit" type="submit" value="検索">
+                </form>
+            </div>
             </header>
             <main class="l-main c-main__grid">
 

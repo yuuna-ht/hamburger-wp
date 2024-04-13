@@ -1,0 +1,15 @@
+@use "../../foundation/global" as *;
+
+.p-search-form__keyword {
+    width:216px;
+    height: 46px;
+    padding-left: 35px; //プレースホルダーの位置調整
+    border-radius:10px;		
+    background: $color--keyword;
+    border:1px solid $color--gray;
+    margin-right: 16px;
+    @include breakpoint(tablet) {
+        width: 396px;
+        margin-right: 14px;
+    }
+}

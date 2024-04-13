@@ -1,6 +1,17 @@
 @use "../../foundation/global" as *;
 
 .p-header__inner {
-    display: block;
-    text-align: center;
+    display: flex;
+    flex-direction: column; /* 要素を縦方向に配置 */
+    align-items: center; /* 横方向に中央揃え */
+    height: 215px;
+    @include breakpoint(tablet) {
+        height: 217px;
+    }
+    @include breakpoint(pc) {
+        display: flex;
+        flex-direction: row; /* 要素を横方向に配置 */
+        justify-content: space-between; /* 左右端に寄せる */
+        align-items: center; /* 縦方向に中央揃え */
+    }
 }

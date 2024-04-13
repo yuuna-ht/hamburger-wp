@@ -2,9 +2,5 @@
 
 .c-logo {
     font-family: $font--Roboto;
-    font-size: 4.0rem;
-    @include breakpoint(pc) {
-        font-size: 6.4;
-        font-weight: 700;
-    }
+    font-weight: 700;
 }

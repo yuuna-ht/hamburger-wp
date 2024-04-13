@@ -1,0 +1,15 @@
+@use "../../foundation/global" as *;
+
+.p-search-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    @include breakpoint(tablet) {
+        margin-top: 38px;
+    }
+    @include breakpoint(pc) {
+        margin-top: 0;
+        margin-right: 31px;
+    }
+}
+

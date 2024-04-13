@@ -1,5 +1,34 @@
 @use "../../foundation/global" as *;
 
 .p-header__logo {
+    font-size: 4.0rem;
     color: $color--gray;
+    width: 203px;
+    height: 47px;
+    margin-top: 12px;
+    @include breakpoint(tablet) {
+        height: 53px;
+        margin-top: -3px;
+    }
+    @include breakpoint(pc) {
+        width: 325px;
+        height: 84px;
+        margin-top: 0;
+        margin-left: 65px;
+    }
+
+    .c-logo {
+        display: inline-block;
+        width: 203px;
+        line-height: 47px;
+        @include breakpoint(tablet) {
+            padding: 3px 0;
+        }
+        @include breakpoint(pc) {
+            font-size: 6.4rem;
+            width: 325px;
+            line-height: 75px;
+            padding: 4.5px 0;
+        }
+    }
 }
