@@ -1,11 +1,9 @@
 @use "../../foundation/global" as *;
 
-.c-search-form__submit {
+.p-search-form__submit {
     width:90px;
     height: 46px;
     border-radius: 10px;
-    background: $color--sidebar;
-    border: 10px;
     color: $color--gray;
     font-size: 16px;
 }
