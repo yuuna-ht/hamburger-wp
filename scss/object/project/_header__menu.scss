@@ -7,19 +7,24 @@
     margin-top: 8px;
     margin-right: 8px;
     @include breakpoint(tablet) {
+        width: 87px;
+        height: 40px;
         margin-top: 20px;
         margin-right: 25px;
     }
     @include breakpoint(pc) {
         display: none;
     }
+
     .c-nav__button {
         color: $color--gray;
         font-size: 2.0rem;
         width: 51px;
         height: 23px;
-    }
         @include breakpoint(tablet) {
             font-size: 3.4rem;
+            width: 87px;
+            height: 40px;
+        }
     }
 }

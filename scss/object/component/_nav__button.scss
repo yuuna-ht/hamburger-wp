@@ -3,10 +3,14 @@
 .c-nav__button {
     font-family: $font--Roboto;
     font-weight: 700;
-    @include breakpoint(tablet) {
-        font-size: 3.4rem;
-    }
     @include breakpoint(pc) {
         display: none;
+    }
+    
+    &--close {
+        display: none;
+        &.is-active {
+            display: block;
+        }
     }
 }

@@ -317,29 +317,7 @@ progress {
 }
 
 .l-sidebar {
-  position: fixed;
-  top: 0;
-  right: -87.47%; /* 非表示 */
-  width: 87.47%;
-  height: 100%;
   background: #F2EDE9;
-  transition: right 0.3s ease-in-out;
-}
-@media (min-width: 600px) {
-  .l-sidebar {
-    right: -44.02%;
-    width: 44.02%;
-  }
-}
-@media (min-width: 1025px) {
-  .l-sidebar {
-    right: 0;
-    width: 19.11%;
-  }
-}
-
-.l-sidebar.is-open {
-  right: 0; /* スライドイン */
 }
 
 .l-footer {
@@ -388,15 +366,16 @@ progress {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
-@media (min-width: 600px) {
-  .c-nav__button {
-    font-size: 3.4rem;
-  }
-}
 @media (min-width: 1025px) {
   .c-nav__button {
     display: none;
   }
+}
+.c-nav__button--close {
+  display: none;
+}
+.c-nav__button--close.is-active {
+  display: block;
 }
 
 .c-logo {
@@ -435,8 +414,8 @@ progress {
 
 .p-header__inner {
   display: flex;
-  flex-direction: column; /* 要素を縦方向に配置 */
-  align-items: center; /* 横方向に中央揃え */
+  flex-direction: column;
+  align-items: center;
   height: 215px;
 }
 @media (min-width: 600px) {
@@ -447,21 +426,24 @@ progress {
 @media (min-width: 1025px) {
   .p-header__inner {
     display: flex;
-    flex-direction: row; /* 要素を横方向に配置 */
-    justify-content: space-between; /* 左右端に寄せる */
-    align-items: center; /* 縦方向に中央揃え */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
-.overlay {
-  display: none;
+.p-overlay {
   position: fixed;
+  z-index: 5;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(112, 112, 112, 0.5); /* 半透明のグレー */
-  z-index: 999; /* 最前面に表示 */
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.502);
+  transition: all 0.5s ease-out;
+}
+.p-overlay.is-active {
+  visibility: visible;
 }
 
 .p-header__menu {
@@ -473,6 +455,8 @@ progress {
 }
 @media (min-width: 600px) {
   .p-header__menu {
+    width: 87px;
+    height: 40px;
     margin-top: 20px;
     margin-right: 25px;
   }
@@ -489,8 +473,10 @@ progress {
   height: 23px;
 }
 @media (min-width: 600px) {
-  .p-header__menu {
+  .p-header__menu .c-nav__button {
     font-size: 3.4rem;
+    width: 87px;
+    height: 40px;
   }
 }
 
@@ -591,5 +577,68 @@ progress {
   border-radius: 10px;
   color: #707070;
   font-size: 16px;
+}
+
+.p-sidebar {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: -87.47%;
+  width: 87.47%;
+  height: 100%;
+  transition: all 0.5s ease-out;
+}
+@media (min-width: 600px) {
+  .p-sidebar {
+    right: -44.02%;
+    width: 44.02%;
+  }
+}
+@media (min-width: 1025px) {
+  .p-sidebar {
+    right: 0;
+    width: 19.11%;
+  }
+}
+.p-sidebar.is-open {
+  right: 0;
+}
+
+.p-sidebar__button {
+  position: relative;
+}
+.p-sidebar__button .c-nav__button--close {
+  position: absolute;
+  top: 8px;
+  right: 11px;
+  width: 32px;
+  height: 36px;
+}
+@media (min-width: 600px) {
+  .p-sidebar__button .c-nav__button--close {
+    top: 20px;
+    right: 25px;
+    height: 37px;
+  }
+}
+.p-sidebar__button .c-nav__button--close::before, .p-sidebar__button .c-nav__button--close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px; /* 棒の幅（太さ） */
+  height: 36px; /* 棒の高さ */
+  background: #707070;
+}
+@media (min-width: 600px) {
+  .p-sidebar__button .c-nav__button--close::before, .p-sidebar__button .c-nav__button--close::after {
+    height: 37px;
+  }
+}
+.p-sidebar__button .c-nav__button--close::before {
+  transform: translate(-50%, -50%) rotate(45.25deg);
+}
+.p-sidebar__button .c-nav__button--close::after {
+  transform: translate(-50%, -50%) rotate(-45.25deg);
 }
 /*# sourceMappingURL=style.css.map */
