@@ -1,0 +1,39 @@
+@use "../../foundation/global" as *;
+
+.c-button--gray {   //検索ボタン
+    background: $color--sidebar;
+    border: 1px solid $color--gray;
+    border-radius: 10px;
+}
+
+.c-closeButton {    //サイドバーの×ボタン
+    width: 32px;
+    height: 36px;
+    @include breakpoint(tablet) {
+        top: 20px;
+        right: 25px;
+        height: 37px;
+    }
+    @include breakpoint(pc) {
+        display: none;
+    }
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 6px; /* 棒の幅（太さ） */
+        height: 36px; /* 棒の高さ */
+        background: $color--gray;
+        @include breakpoint(tablet) {
+            height: 37px;
+        }
+    }
+    &::before {
+        transform: translate(-50%,-50%) rotate(45.25deg);
+    }
+    &::after {
+        transform: translate(-50%,-50%) rotate(-45.25deg);
+    }
+}

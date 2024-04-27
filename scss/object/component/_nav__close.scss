@@ -1,8 +1,0 @@
-@use "../../foundation/global" as *;
-
-.c-nav__close {
-    display: none;
-    &.is-active {
-        display: block;
-    }
-}

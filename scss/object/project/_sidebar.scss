@@ -1,0 +1,42 @@
+@use "../../foundation/global" as *;
+
+.p-sidebar {
+    background: $color--sidebar;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: -87.47%; //非表示
+    width: 87.47%;
+    height: 100%;
+    transition: all 0.5s ease-out;
+    @include breakpoint(tablet) {
+        right: -44.02%;
+        width: 44.02%;
+    }
+    @include breakpoint(pc) {
+        right: 0;
+        width: 19.11%;
+    }
+
+    &.is-open {
+        right: 0; //スライドイン
+    }
+
+    &__button {
+        position: absolute;
+        top: 8px;
+        right: 11px;
+        @include breakpoint(tablet) {
+            top: 20px;
+            right: 25px;
+        }
+        @include breakpoint(pc) {
+            display: none;
+        }
+
+        >span {
+            font-size: 0;
+        }
+    }
+}
+

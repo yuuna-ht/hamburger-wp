@@ -1,57 +1,56 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="オンラインスクールのRaiseTechでの最終課題です。">
-        <title>Hamburger-site</title>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com"> 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link href="../scss/foundation/_ress.scss" rel="stylesheet">
-        <link href="../css/style.css" rel="stylesheet">
-        <link rel="shortcut icon" href="../images/H.ico">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="../jQuery/jquery-3.7.1.min.js"></script>
-        <script src="../js/script.js" defer></script> 
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="オンラインスクールのRaiseTechでの最終課題です。">
+    <title>Hamburger-site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="../scss/foundation/_ress.scss" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/H.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../jQuery/jquery-3.7.1.min.js"></script>
+    <script src="../js/script.js" defer></script> 
+</head>
 <body>
-    <div class="p-overlay js-menu-event"></div>
+    <div class="p-overlay js-menuEvent"></div>
     <div id="p-wrapper">
-        <header class="l-header c-header__grid">
-            <div class="p-header__inner">
-                <div class="p-header__menu">
-                    <button class="c-roboto700 js-nav__button">Menu</button>
+        <header class="l-header p-header c-header__grid">
+            <button class="p-header__menu c-roboto js-nav__button">Menu</button>
+            <h1 class="p-header__logo"><a href="#" class="c-roboto">Hamburger</a></h1>
+            <form class="p-searchForm" action="#" method="get">
+                <label class="c-readerText" for="search">検索</label>
+                <div class="p-searchBox">
+                    <input class="p-searchBox__input c-input" type="search" name="search" id="search">
+                    <img src="../images/search.ico" alt="虫眼鏡" class="p-searchBox__icon">
                 </div>
-                <h1 class="p-header__logo"><a href="#" class="c-roboto700">Hamburger</a></h1>
-                <form class="p-search-form" action="#" method="get">
-                    <label class="c-reader-text" for="search">検索</label>
-                    <div class="p-search-box">
-                        <input class="p-search-form__keyword" type="search" name="search" id="search">
-                        <img src="../images/search.ico" alt="虫眼鏡" class="p-search-icon">
-                    </div>
-                    <input class="p-search-form__submit c-gray-button" type="submit" value="検索">
-                </form>
-            </div>
-            </header>
-            <main class="l-main c-main__grid">
-
-            </main>
-            <aside class="l-sidebar c-sidebar__grid">
-                <div class="p-sidebar__button">
-                    <button class="c-nav__close js-menu-event"></button>
-                </div>
-                <h2 class="c-roboto700 p-sidebar__title">Menu</h2>
-                <h3 class="c-bold p-sidebar__title--sub">ハンバーガー</h3>
-                <ul class="p-menu__list">
-                    <li class=""></li>
-                </ul>
+                <input class="p-searchForm__submit c-button--gray" type="submit" value="検索">
+            </form>
+        </header>
+        <main class="l-main c-main__grid">
+            <div class="p-mainVisual__title c-mainVisual__image">
                 
-            </aside>
-            <footer class="l-footer c-footer__grid">
+            </div>
 
-            </footer>
-        </div>
+
+        </main>
+        <aside class="l-sidebar p-sidebar c-sidebar__grid">
+            <button class="p-sidebar__button c-closeButton js-menuEvent">
+                <span>メニューを閉じる</span>
+            </button>
+            <h2 class="c-roboto p-sidebar__title">Menu</h2>
+            <h3 class="c-bold p-sidebar__title--sub">ハンバーガー</h3>
+            <ul class="p-menu__list">
+                <li class=""></li>
+            </ul>
+                
+        </aside>
+        <footer class="l-footer c-footer__grid">
+
+        </footer>
+    </div>
 </body>
 </html>

@@ -1,0 +1,57 @@
+@use "../../foundation/global" as *;
+
+.p-header {
+    background-color: $color--header;
+
+    &__menu {
+        align-self: flex-end;
+        width: 51px;
+        height: 23px;
+        color: $color--gray;
+        font-size: 2.0rem;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        @include breakpoint(tablet) {
+            width: 87px;
+            height: 40px;
+            font-size: 3.4rem;
+            position: absolute;
+            top: 20px;
+            right: 25px;
+        }
+        @include breakpoint(pc) {
+            display: none;
+        }
+    }
+
+    &__logo {
+        font-size: 4.0rem;
+        color: $color--gray;
+        width: 203px;
+        height: 47px;
+        @include breakpoint(tablet) {
+            height: 53px;
+        }
+        @include breakpoint(pc) {
+            width: 325px;
+            height: 84px;
+            margin-left: 65px;
+        }
+
+        .c-roboto700 {
+            display: inline-block;
+            width: 203px;
+            line-height: 47px;
+            @include breakpoint(tablet) {
+                padding: 3px 0;
+            }
+            @include breakpoint(pc) {
+                font-size: 6.4rem;
+                width: 325px;
+                line-height: 75px;
+                padding: 4.5px 0;
+            }
+        }
+    }
+}

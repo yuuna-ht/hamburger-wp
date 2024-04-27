@@ -1,8 +1,5 @@
-@use "header__grid";
-@use "main__grid";
-@use "sidebar__grid";
-@use "footer__grid";
-@use "nav__close";
-@use "roboto700";
-@use "reader-text";
-@use "gray-button";
+@use "grid";
+@use "font";
+@use "readerText";
+@use "button";
+@use "input";

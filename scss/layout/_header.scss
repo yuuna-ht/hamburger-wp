@@ -1,5 +1,18 @@
 @use "../foundation/global" as *;
 
 .l-header {
-    background-color: $color--header;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 43px 0 39px;
+    position: relative;
+    @include breakpoint(tablet) {
+        padding: 40px 0 38px;
+    }
+    @include breakpoint(pc) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 66px 0 67px;
+    }
 }

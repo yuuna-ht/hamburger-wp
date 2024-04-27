@@ -1,12 +1,6 @@
-@use "wrapper";
-@use "header__inner";
+@use "frameLayout";
+@use "header";
+@use "sidebar";
 @use "overlay";
-@use "header__menu";
-@use "header__logo";
-@use "search-form";
-@use "search-box";
-@use "search-form__keyword";
-@use "search-icon";
-@use "search-form__submit";
-@use "sidebar__button";
-
+@use "searchForm";
+@use "searchBox";
