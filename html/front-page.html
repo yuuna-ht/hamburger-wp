@@ -16,11 +16,14 @@
     <script src="../js/script.js" defer></script> 
 </head>
 <body>
+<!-- サイドバー出現時のオーバーレイ -->
     <div class="p-overlay js-menuEvent"></div>
-    <div id="p-wrapper">
+<!-- サイト全体のグリッドレイアウト -->
+    <div id="p-container">
+<!-- ヘッダー -->
         <header class="l-header p-header c-header__grid">
             <button class="p-header__menu c-roboto js-nav__button">Menu</button>
-            <h1 class="p-header__logo"><a href="#" class="c-roboto">Hamburger</a></h1>
+            <h1 class="p-header__logo c-roboto"><a href="/html/front-page.html">Hamburger</a></h1>
             <form class="p-searchForm" action="#" method="get">
                 <label class="c-readerText" for="search">検索</label>
                 <div class="p-searchBox">
@@ -30,26 +33,103 @@
                 <input class="p-searchForm__submit c-button--gray" type="submit" value="検索">
             </form>
         </header>
-        <main class="l-main c-main__grid">
-            <div class="p-mainVisual__title c-mainVisual__image">
-                
+<!-- メイン -->
+        <main class="l-main p-main c-main__grid">
+<!-- メインビジュアル -->
+            <div class="p-mainVisual c-background__image">
+                <h2 class="p-mainVisual__title c-bold">ダミーサイト</h2>
             </div>
-
-
+<!-- ブランチメニュー -->
+            <div class="p-branchMenu">
+                <div class="p-branchMenu__inner">
+                    <section class="p-branchMenu__list --takeOut c-background__image">
+                        <h2 class="p-branchMenu__title c-roboto">Take Out</h2>
+                        <div class="p-branchMenu__about">
+                            <dl class="p-content">
+                                <a href="">
+                                    <dd class="p-content__title c-bold">Take Out</dd>
+                                    <dt class="p-conten__text">当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています</dt>
+                                </a>
+                            </dl>
+                            <dl class="p-content">
+                                <a href="">
+                                    <dd class="p-content__title c-bold">Take Out</dd>
+                                    <dt class="p-conten__text">当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています当店のテイクアウトで利用できる商品を掲載しています</dt>
+                                </a>
+                            </dl>
+                        </div>
+                    </section>
+                    <section class="p-branchMenu__list --eatIn c-background__image">
+                        <h2 class="p-branchMenu__title c-roboto">Eat In</h2>
+                        <div class="p-branchMenu__about">
+                            <dl class="p-content">
+                                <a href="">
+                                    <dd class="p-content__title c-bold">Eat In</dd>
+                                    <dt class="p-conten__text">店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです</dt>
+                                </a>
+                            </dl>
+                            <dl class="p-content">
+                                <a href="">
+                                    <dd class="p-content__title c-bold">Eat In</dd>
+                                    <dt class="p-conten__text">店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです店内でお食事いただけるメニューです</dt>
+                                </a>
+                            </dl>
+                        </div>
+                    </section>
+                </div>
+            </div>
+<!--  アクセス  -->
+            <section class="p-access c-background__image">
+                <div class="p-map"></div>
+                <div class="p-access__about"></div>
+                <div class="p-access__inner">
+                    <h2 class="p-access__title c-bold">見出しが入ります</h2>
+                    <p class="p-access__text c-bold">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                </div>
+            </section>
         </main>
+<!-- サイドバー -->
         <aside class="l-sidebar p-sidebar c-sidebar__grid">
-            <button class="p-sidebar__button c-closeButton js-menuEvent">
+            <button class="p-sidebar__button js-menuEvent">
                 <span>メニューを閉じる</span>
             </button>
-            <h2 class="c-roboto p-sidebar__title">Menu</h2>
-            <h3 class="c-bold p-sidebar__title--sub">ハンバーガー</h3>
-            <ul class="p-menu__list">
-                <li class=""></li>
+            <h2 class="p-sidebar__menu c-roboto">Menu</h2>
+            <ul class="p-menu">
+                <li class="p-menu__list">
+                    <h3 class="c-bold">ハンバーガー</h3>
+                    <ul class="p-menu__item">
+                        <li>ハンバーガー</li>
+                        <li>チーズバーガー</li>
+                        <li>テリヤキバーガー</li>
+                        <li>アボカドバーガー</li>
+                        <li>フィッシュバーガー</li>
+                        <li>ベーコンバーガー</li>
+                        <li>チキンバーガー</li>
+                    </ul>
+                    <h3 class="c-bold">サイド</h3>
+                    <ul class="p-menu__item">
+                        <li>ポテト</li>
+                        <li>サラダ</li>
+                        <li>ナゲット</li>
+                        <li>コーン</li>
+                    </ul>
+                    <h3 class="c-bold">ドリンク</h3>
+                    <ul class="p-menu__item">
+                        <li>ポテト</li>
+                        <li>サラダ</li>
+                        <li>ナゲット</li>
+                        <li>コーン</li>
+                    </ul>
+                </li>
             </ul>
-                
         </aside>
-        <footer class="l-footer c-footer__grid">
-
+<!-- フッター -->
+        <footer class="l-footer p-footer c-footer__grid">
+            <ul class="p-footer__nav">
+                <li class="p-footer__navList"><a href="page.html">ショップ情報</a></li>
+                <li class="p-footer__navList"><a href="#">ヒストリー</a></li>
+            </ul>
+            <small class="p-footer__copy">Copyright: RaiseTech</small>
         </footer>
     </div>
 </body>

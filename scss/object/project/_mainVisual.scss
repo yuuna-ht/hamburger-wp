@@ -1,0 +1,33 @@
+@use "../../foundation/global" as *;
+
+/* front-page メインビジュアル */
+.p-mainVisual {
+    background-image: url(../../../images/mainVisual.png);
+    height: $height--mainVisual;
+    display: flex;
+    align-items: center;
+    min-height: 285px;
+    @include breakpoint(pc) {
+        height: 20%;
+    }
+
+    &__title {
+        font-size: 3.6rem;
+        color: $color--white;
+        line-height: 53px;
+        width: 216px;
+        margin-top: 11px;
+        margin-left: 25px;
+        transition: all 0.4s ease-in;
+        @include breakpoint(tablet) {
+            margin-left: 86px;
+        }
+        @include breakpoint(pc) {
+            font-size: 4.0rem;
+            line-height: 59px;
+            width: 240px;
+            margin-top: 0;
+            margin-bottom: 3px;
+        }
+    }
+}

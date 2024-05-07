@@ -1,10 +1,10 @@
 @use "../../foundation/global" as *;
 
+/* サイドバー */
 .p-sidebar {
     background: $color--sidebar;
     position: fixed;
     z-index: 10;
-    top: 0;
     right: -87.47%; //非表示
     width: 87.47%;
     height: 100%;
@@ -14,8 +14,9 @@
         width: 44.02%;
     }
     @include breakpoint(pc) {
+        position: static;
         right: 0;
-        width: 19.11%;
+        width: 100%;
     }
 
     &.is-open {
@@ -23,10 +24,13 @@
     }
 
     &__button {
+        width: 32px;
+        height: 36px;
         position: absolute;
         top: 8px;
         right: 11px;
         @include breakpoint(tablet) {
+            height: 37px;
             top: 20px;
             right: 25px;
         }
@@ -34,9 +38,28 @@
             display: none;
         }
 
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 6px; /* 棒の幅（太さ） */
+            height: 36px; /* 棒の高さ */
+            background: $color--gray;
+            @include breakpoint(tablet) {
+                height: 37px;
+            }
+        }
+        &::before {
+            transform: translate(-50%,-50%) rotate(45.25deg);
+        }
+        &::after {
+            transform: translate(-50%,-50%) rotate(-45.25deg);
+        }
+
         >span {
             font-size: 0;
         }
     }
 }
-

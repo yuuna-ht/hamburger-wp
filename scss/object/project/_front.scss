@@ -1,0 +1,147 @@
+@use "../../foundation/global" as *;
+
+/* メインの背景色 */
+.p-main {   
+    background-color: $color--main;
+}
+
+/* ブランチメニュー */
+.p-branchMenu {
+    width: 89%;
+    margin: 0 auto;
+    @include breakpoint(tablet) {
+        width: 91%;
+    }
+    @include breakpoint(pc) {
+        width: 85%;
+    }
+
+    &__inner {
+        padding: 20px 0 49px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        @include breakpoint(tablet) {
+            padding: 40px 0;
+            flex-direction: row;
+            justify-content: center;
+            align-items: stretch;
+            gap: 5%;
+        } 
+        @include breakpoint(pc) {
+            padding-top: 8%;
+            padding-bottom: 9%;
+        }
+    }
+
+    &__list {
+        min-height: 642px;
+        width: 100%;
+        padding: 13px 0 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include breakpoint(tablet) {
+            min-height: 681px;
+            padding: 14px 0 16px;
+        }
+        @include breakpoint(pc) {
+            min-height: 1197px;
+            padding: 24px 0 16px;
+        }
+
+        &.--takeOut {
+            background-image: url(/images/takeOut.jpg);
+            
+            .p-branchMenu__title {
+                color: $color--lightgray;
+            }
+        }
+
+        &.--eatIn {
+            background-image: url(/images/eatIn.jpg);
+        }
+    }
+
+    &__title {
+        font-size: 4.1rem;
+        line-height: 48px;
+        margin-left: 15px;
+        color: $color--white;
+        position: relative;
+        @include breakpoint(tablet) {
+            font-size: 4.4rem;
+            line-height: 52px;
+            margin-left: 11px;
+        }
+        @include breakpoint(pc) {
+            font-size: 8.0rem;
+            line-height: 94px;
+            margin-left: 10px;
+        }
+
+        &::after {  //タイトル下の下線
+            content: "";
+            display: block;
+            width: 34px; /* 下線の幅 */
+            height: 4px; /* 下線の高さ */
+            background-color: $color--white; /* 下線の色 */
+            position: absolute;
+            bottom: -19px;
+            @include breakpoint(tablet) {
+                width: 36px;
+                bottom: -26px;
+            }
+            @include breakpoint(pc) {
+                width: 63px;
+                bottom: -43px;
+            }
+        }
+    }
+
+    &__about {
+        margin: 190px 16px 0;
+        @include breakpoint(tablet) {
+            margin: 250px 16px 0;
+        }
+        @include breakpoint(pc) {
+            margin: 400px 16px 0;
+        }
+
+        .p-content {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 16px;
+            margin-bottom: 16px;
+            @include breakpoint(pc) {
+            padding: 20px;
+            margin-bottom: 20px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &__title {
+                font-size: 2.2rem;
+                margin-bottom: 8px;
+                @include breakpoint(tablet) {
+                    font-size: 2.4rem;
+                    margin-bottom: 16px;
+                }
+                @include breakpoint(pc) {
+                    margin-bottom: 18px;
+                }
+            }
+
+            &__text {
+                transition: all 0.4s ease-in;
+                @include breakpoint(tablet) {
+                    font-size: 1.4rem;
+                }
+                @include breakpoint(pc) {
+                    font-size: inherit;
+                }
+            }
+        }
+    }
+}
