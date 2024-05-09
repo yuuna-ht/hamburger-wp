@@ -10,6 +10,7 @@ body {
     font-family: $font--MPLUS1;
     color: $color--brown;
     line-height: 23.76px;
+    overflow-x: hidden;
 }
 
 img {
@@ -29,4 +30,8 @@ ul, ol {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+a:hover, button:hover {
+    opacity: 0.6;
 }

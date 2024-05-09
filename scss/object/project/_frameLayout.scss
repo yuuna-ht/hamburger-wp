@@ -13,6 +13,6 @@
     }
     @include breakpoint(pc) {
         grid-template-rows: 217px 1fr 150px;
-        grid-template-columns: 81% 19%;
+        grid-template-columns: 80% 20%;
     }
 }

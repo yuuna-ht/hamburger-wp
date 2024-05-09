@@ -1,8 +1,11 @@
 $(function() {
     // ウィンドウのリサイズイベントが発生したときに実行
     function handleResize() {
-        if ($(".p-sidebar").hasClass("is-open")) {
-            $(".p-sidebar").removeClass("is-open");
+        if ($(".l-sidebar").hasClass("is-open")) {
+            $(".l-sidebar").removeClass("is-open");
+        }
+        if ($("body").hasClass("is-open")) {
+            $("body").removeClass("is-open");
         }
         if ($(".p-overlay").hasClass("is-active")) {
             $(".p-overlay").removeClass("is-active");
@@ -14,13 +17,15 @@ $(function() {
 
     // '.js-nav__button' クリック時の処理
     $('.js-nav__button').on("click", function() {
-        $(".p-sidebar").toggleClass("is-open");
+        $(".l-sidebar").toggleClass("is-open");
+        $("body").toggleClass("is-open");
         $(".p-overlay").toggleClass("is-active");
     });
 
     // '.js-menu-event' クリック時の処理
     $('.js-menuEvent').on("click", function() {
-        $(".p-sidebar").removeClass("is-open");
+        $(".l-sidebar").removeClass("is-open");
+        $("body").removeClass("is-open");
         $(".p-overlay").removeClass("is-active");
     });
 });

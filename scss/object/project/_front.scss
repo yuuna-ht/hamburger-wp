@@ -6,7 +6,7 @@
 }
 
 /* ブランチメニュー */
-.p-branchMenu {
+.p-branchMenu {     //全体の左右余白
     width: 89%;
     margin: 0 auto;
     @include breakpoint(tablet) {
@@ -16,12 +16,12 @@
         width: 85%;
     }
 
-    &__inner {
-        padding: 20px 0 49px;
+    &__inner {      
+        padding: 20px 0 49px;   //全体の上下余白
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 20px;      //セクション間の余白
         @include breakpoint(tablet) {
             padding: 40px 0;
             flex-direction: row;
@@ -66,27 +66,25 @@
 
     &__title {
         font-size: 4.1rem;
-        line-height: 48px;
+        line-height: 1.18;
         margin-left: 15px;
         color: $color--white;
         position: relative;
         @include breakpoint(tablet) {
             font-size: 4.4rem;
-            line-height: 52px;
             margin-left: 11px;
         }
         @include breakpoint(pc) {
             font-size: 8.0rem;
-            line-height: 94px;
             margin-left: 10px;
         }
 
-        &::after {  //タイトル下の下線
+        &::after {      //タイトル下の下線
             content: "";
             display: block;
-            width: 34px; /* 下線の幅 */
-            height: 4px; /* 下線の高さ */
-            background-color: $color--white; /* 下線の色 */
+            width: 34px;    //下線の幅
+            height: 4px;    //下線の高さ
+            background-color: $color--white;    //下線の色
             position: absolute;
             bottom: -19px;
             @include breakpoint(tablet) {
@@ -123,9 +121,11 @@
 
             &__title {
                 font-size: 2.2rem;
+                line-height: 1.1;
                 margin-bottom: 8px;
                 @include breakpoint(tablet) {
                     font-size: 2.4rem;
+                    line-height: 1;
                     margin-bottom: 16px;
                 }
                 @include breakpoint(pc) {

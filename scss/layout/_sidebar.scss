@@ -1,6 +1,31 @@
 @use "../foundation/global" as *;
 
+/* サイドバーのレイアウト */
 .l-sidebar {
+    position: fixed;
+    z-index: 10;
+    right: -87.47%; //非表示
+    width: 87.47%;
+    height: 100%;
+    padding: 178px 0 178px 46px;
+    overflow-y: auto;
+    transition: all 0.5s ease-out;
+    @include breakpoint(tablet) {
+        right: -44.02%; //非表示
+        width: 44.02%;
+    }
+    @include breakpoint(pc) {
+        position: static;
+        width: 100%;
+        padding: 84px 0 84px 12.5%; //サイドバー左側の余白は可変
+        transition: none;
+    }
 
+    &.is-open {
+        right: 0; //スライドイン
+    }
 }
 
+body.is-open {  //サイドバー縦スクロール時bodyは固定
+    position: fixed;
+}

@@ -1,6 +1,6 @@
 //メディアクエリ
 
-$tablet: 768px;
+$tablet: 600px;
 $pc: 1025px;
 
 @mixin breakpoint($point) {
@@ -11,7 +11,7 @@ $pc: 1025px;
     }
 
     @if $point==pc {
-        @media (min-width: $pc) { //1025px以上でPCサイズ
+        @media (min-width: $pc) { //1025px以上でpcサイズ
             @content ;
         }        
     }

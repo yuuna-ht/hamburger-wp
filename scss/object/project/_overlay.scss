@@ -1,5 +1,6 @@
 @use "../../foundation/global" as *;
 
+/* サイドバー出現時のオーバーレイ */
 .p-overlay {
     position: fixed;
     z-index: 5;

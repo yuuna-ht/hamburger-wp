@@ -7,7 +7,7 @@
     background-image: url(/images/map.jpg);
     width: 100%;
 
-    &__about {
+    &__overlay {    //範囲が変動する濃い色のオーバーレイ
         position: absolute;
         top: 0;
         left: 0;
@@ -46,15 +46,14 @@
             line-height: 53px;
             margin-left:119px;
         }
-        &::after {  //タイトル下の下線
+        &::after {      //タイトル下の下線
             content: "";
             display: block;
-            width: 75px; /* 下線の幅 */
-            height: 2px; /* 下線の高さ */
-            background-color: $color--white; /* 下線の色 */
+            width: 75px;    //下線の幅
+            height: 2px;    //下線の高さ
+            background-color: $color--white;    //下線の色
             position: absolute;
             bottom: -15px;
-            transition: all 0.4s ease-in;
             @include breakpoint(pc) {
                 bottom: -51px;
             }
@@ -75,7 +74,8 @@
             margin: 109px 134px 0 119px;
         }
     }
-    .p-map {
+
+    .p-map__overlay {   //map画像全体にかかる薄い色のオーバーレイ
         position: absolute;
         top: 0;
         left: 0;
@@ -84,4 +84,3 @@
         background-color: rgba(0, 0, 0, 0.6);
     }
 }
-

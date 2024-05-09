@@ -4,8 +4,7 @@
 .p-footer {
     background-image: url(../../images/footer.png);
 
-/* フッターナビ */
-    &__nav {
+    &__nav {    //フッターナビ
         display: flex;
         justify-content: center;
         align-items: center;
@@ -22,8 +21,8 @@
         @include breakpoint(tablet) {
             font-size: 2.0rem;
         }
-        &:last-child {
-            border-left: 2px solid $color--white;
+        &:last-child {      //フッターナビリスト間の縦線
+            border-left: 2px solid;
         }
     }
 
