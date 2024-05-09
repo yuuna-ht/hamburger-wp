@@ -344,7 +344,6 @@ progress {
 .l-main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 /* サイドバーのレイアウト */
@@ -611,7 +610,7 @@ body.is-open {
 }
 @media (min-width: 1025px) {
   .p-menu__title {
-    font-size: clamp(20px, 1.5vw, 24px);
+    font-size: clamp(2rem, 1.5vw, 2.4rem);
   }
 }
 .p-menu__title:not(:first-child) {
@@ -643,7 +642,7 @@ body.is-open {
 }
 @media (min-width: 1025px) {
   .p-menu__list {
-    font-size: clamp(14px, 1.2vw, 20px);
+    font-size: clamp(1.4rem, 1.2vw, 2rem);
   }
 }
 .p-menu__list:last-child {

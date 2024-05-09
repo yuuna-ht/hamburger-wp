@@ -65,7 +65,7 @@
         font-size: 2.4rem;
         line-height: 1.5;
             @include breakpoint(pc) {
-                font-size: clamp(20px, 1.5vw, 24px);    //サイドバーのサイズに合わせて文字サイズを可変
+                font-size: clamp(2.0rem, 1.5vw, 2.4rem);    //サイドバーのサイズに合わせて文字サイズを可変
             }
         &:not(:first-child) {
             margin-top: 60px;   //メニュータイトル'サイド'以降のタイトル上の余白
@@ -92,7 +92,7 @@
         font-weight: 400;
         margin-bottom: clamp(18px, 1.05vw, 20px);   //メニューリスト間の余白を可変
         @include breakpoint(pc) {
-            font-size: clamp(14px, 1.2vw, 20px);    //サイドバーのサイズに合わせて文字サイズを可変
+            font-size: clamp(1.4rem, 1.2vw, 2.0rem);    //サイドバーのサイズに合わせて文字サイズを可変
         }
         &:last-child {
             margin-bottom: 0;
