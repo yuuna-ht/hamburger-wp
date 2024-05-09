@@ -344,6 +344,7 @@ progress {
 .l-main {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 /* サイドバーのレイアウト */
@@ -945,7 +946,7 @@ body.is-open {
 }
 @media (min-width: 1025px) {
   .p-mainVisual {
-    height: 20%;
+    height: 27.6vw;
   }
 }
 .p-mainVisual__title {
