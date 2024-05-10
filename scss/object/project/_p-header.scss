@@ -11,14 +11,14 @@
         line-height: 1.15;
         position: absolute;
         top: 8px;
-        right: 8px;
+        right: 22px;
         @include breakpoint(tablet) {
             font-size: 3.4rem;
             width: 87px;
             line-height: 1.17;
             position: absolute;
             top: 20px;
-            right: 25px;
+            right: 35px;
         }
         @include breakpoint(pc) {
             display: none;

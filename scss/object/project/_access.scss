@@ -38,12 +38,11 @@
     &__title {
         position: relative;
         font-size: 3.0rem;
-        line-height: 45px;
+        line-height: 1.5;
         color: $color--white;
         margin-left:42px;
         @include breakpoint(pc) {
             font-size: 3.6rem;
-            line-height: 53px;
             margin-left:119px;
         }
         &::after {      //タイトル下の下線

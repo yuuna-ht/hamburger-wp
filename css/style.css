@@ -505,7 +505,7 @@ body.is-open {
   line-height: 1.15;
   position: absolute;
   top: 8px;
-  right: 8px;
+  right: 22px;
 }
 @media (min-width: 600px) {
   .p-header__menu {
@@ -514,7 +514,7 @@ body.is-open {
     line-height: 1.17;
     position: absolute;
     top: 20px;
-    right: 25px;
+    right: 35px;
   }
 }
 @media (min-width: 1025px) {
@@ -952,7 +952,7 @@ body.is-open {
 .p-mainVisual__title {
   font-size: 3.6rem;
   color: #FFFFFF;
-  line-height: 14.72;
+  line-height: 1.48;
   margin-top: 11px;
   margin-left: 25px;
   transition: all 0.4s ease-in;
@@ -965,7 +965,7 @@ body.is-open {
 @media (min-width: 1025px) {
   .p-mainVisual__title {
     font-size: 4rem;
-    line-height: 14.75;
+    line-height: 1.475;
     margin-top: 0;
     margin-bottom: 3px;
   }
@@ -1015,14 +1015,13 @@ body.is-open {
 .p-access__title {
   position: relative;
   font-size: 3rem;
-  line-height: 45px;
+  line-height: 1.5;
   color: #FFFFFF;
   margin-left: 42px;
 }
 @media (min-width: 1025px) {
   .p-access__title {
     font-size: 3.6rem;
-    line-height: 53px;
     margin-left: 119px;
   }
 }
