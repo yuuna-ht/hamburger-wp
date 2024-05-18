@@ -1,21 +1,18 @@
 @use "../../foundation/global" as *;
 
-/* front-page メインビジュアル */
-.p-mainVisual {
+/* メインビジュアル */
+.p-mainVisual {     //フロントページ
     background-image: url(../../../images/mainVisual.png);
     height: $height--mainVisual;
-    display: flex;
-    align-items: center;
-    min-height: 285px;
     @include breakpoint(pc) {
-        height: 27.6vw;
+        height: 27.6vw; //画面幅1%に対する高さを設定 画面幅に応じて高さを調整する
+        min-height: 285px;
     }
 
     &__title {
         font-size: 3.6rem;
         color: $color--white;
         line-height: 1.48;
-        margin-top: 11px;
         margin-left: 25px;
         transition: all 0.4s ease-in;
         @include breakpoint(tablet) {
@@ -24,8 +21,84 @@
         @include breakpoint(pc) {
             font-size: 4.0rem;
             line-height: 1.475;
-            margin-top: 0;
-            margin-bottom: 3px;
+        }
+    }
+}
+
+.p-mainVisual--archive {    //アーカイブページ
+    @extend .p-mainVisual;
+    background-image: url(../../../images/mainVisual-archive.jpg);
+    @include breakpoint(pc) {
+        height: $height--mainVisual-pc;
+        min-height: inherit;
+    }
+
+    &::before {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &__title {
+        @extend .p-mainVisual__title;
+        line-height: 1.173;
+        padding-bottom: 6px;    //中央配置のための微調整
+        margin-left: 37px;
+        z-index: 1;
+        @include breakpoint(tablet) {
+            font-size: 6.0rem;
+            line-height: 1.1;
+        }
+    }
+    .c-bold {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        color: $color--white;
+        margin:12px 0 0 37px;
+        z-index: 1;
+        @include breakpoint(tablet) {
+            line-height: 1.5;
+            margin:0 0 0 19px;
+        }
+    }
+}
+
+.p-mainVisual--single {     //シングルページ
+    @extend .p-mainVisual;
+    background-image: url(../../../images/mainVisual-single.jpg);
+    background-size: 150%;
+    height: 225px;
+    @include breakpoint(tablet) {
+        height: 60vw;
+        max-height: 500px;
+    }
+    @include breakpoint(pc) {
+        height: 500px;
+        background-size: cover;
+    }
+
+    &__title {
+        @extend .p-mainVisual__title;
+        @include breakpoint(tablet) {
+            font-size: 6.0rem;
+            line-height: 1.498;
+        }
+    }
+}
+
+.p-mainVisual--page {
+    @extend .p-mainVisual--single;
+    background-image: url(../../../images/mainVisual-page.jpg);
+
+    &__title {
+        @extend .p-mainVisual--single__title;
+        margin-left: 25px;
+        @include breakpoint(tablet) {
+            margin-left: 86px;
         }
     }
 }

@@ -1,0 +1,6 @@
+@use "../../foundation/global" as *;
+
+.c-list--ordered {
+    list-style-type: decimal;
+    list-style-position: inside;
+}

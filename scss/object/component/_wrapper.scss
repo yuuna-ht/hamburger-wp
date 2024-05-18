@@ -1,0 +1,13 @@
+@use "../../foundation/global" as *;
+
+/* メインのラッパー部分の左右余白 */
+.c-wrapper {
+    width: 89%;
+    margin: 0 auto;
+    @include breakpoint(tablet) {
+        width: 91%;
+    }
+    @include breakpoint(pc) {
+        width: 85%;
+    }
+}

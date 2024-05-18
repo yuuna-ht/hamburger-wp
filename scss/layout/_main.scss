@@ -6,3 +6,8 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.l-main--single {
+    @extend .l-main;
+    justify-content: flex-start;
+}

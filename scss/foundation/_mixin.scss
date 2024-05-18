@@ -1,7 +1,9 @@
 //メディアクエリ
 
 $tablet: 600px;
+$tablet2: 767px;
 $pc: 1025px;
+$pc2: 1550px;
 
 @mixin breakpoint($point) {
     @if $point==tablet {
@@ -10,9 +12,21 @@ $pc: 1025px;
         }
     }
 
+    @if $point==tablet2 {
+        @media (min-width: $tablet2) {  //ページネーション調整
+            @content ;
+        }
+    }
+
     @if $point==pc {
         @media (min-width: $pc) { //1025px以上でpcサイズ
             @content ;
         }        
+    }
+
+    @if $point==pc2 {
+        @media (min-width: $pc2) {   //archiveのメニューカード調整
+            @content ;
+        }
     }
 }

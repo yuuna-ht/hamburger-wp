@@ -1,0 +1,21 @@
+@use "../../foundation/global" as *;
+
+/* アーカイブページ メインコンテンツンツ幅・余白調整 */
+.p-archive {
+    @include breakpoint(tablet) {
+        min-width: 560px;
+    }
+    @include breakpoint(pc) {
+        min-width: 756px;
+    }
+
+    &__main {
+        padding: 32px 0 62px;
+        @include breakpoint(tablet) {
+            padding: 39px 0 107px 0;
+        @include breakpoint(pc) {
+            padding: 63px 0 150px;
+        }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@use "../../foundation/global" as *;
+
+/* シングル・ページページのfigureタグ */
+.p-figure {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3%;
+
+    &__image {
+        width: 43%;
+        height: 23.7vw;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &.--right {
+        flex-direction: row-reverse;
+    }
+}

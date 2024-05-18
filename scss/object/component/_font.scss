@@ -8,3 +8,7 @@
 .c-bold {  //日本語表記＋ボールド部分のフォント設定 
     font-weight: 700;
 }
+
+.c-text--white {    //base設定の文字色白バージョン
+    color: $color--white;
+}

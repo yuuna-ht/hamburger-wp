@@ -11,14 +11,14 @@
         line-height: 1.15;
         position: absolute;
         top: 8px;
-        right: 22px;
+        right: 22px;    //ビューポートに入りきらず数値を変えている
         @include breakpoint(tablet) {
             font-size: 3.4rem;
             width: 87px;
             line-height: 1.17;
             position: absolute;
             top: 20px;
-            right: 35px;
+            right: 35px;    //ビューポートに入りきらず数値を変えている
         }
         @include breakpoint(pc) {
             display: none;

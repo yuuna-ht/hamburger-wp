@@ -8,6 +8,7 @@ $color--white: #FFFFFF;
 $color--lightgray: #EAEAEA;
 $color--brown: #3C2A10;
 $color--black: #000000;
+$color--blue: #4A6C9B;
 
 /* 背景色 */
 $color--header: #FFF8EF;
@@ -15,7 +16,8 @@ $color--main: #FFFDFB;
 $color--sidebar: #F2EDE9;
 $color--map-bg: #000000;
 $color--card-bg: #3C2B1C;
-$color--quote: #F5F5F5;
+$color--highlight: #F5F5F5;
 
 /* 高さ */
 $height--mainVisual: 285px;  //メインビジュアルの高さ
+$height--mainVisual-pc: 239px;  //pcアーカイブ・アーカイブサーチのメインビジュアルの高さ

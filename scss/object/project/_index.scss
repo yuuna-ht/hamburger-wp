@@ -1,9 +1,21 @@
-@use "frameLayout";
+@use "container";
 @use "p-header";
 @use "p-sidebar";
 @use "overlay";
 @use "form";
-@use "front";
+@use "p-main";
+@use "branchMenu";
 @use "p-footer";
 @use "mainVisual";
 @use "access";
+@use "archive";
+@use "card";
+@use "introduction";
+@use "pagenation";
+@use "article";
+@use "figure";
+@use "gallery";
+@use "quote";
+@use "table";
+
+

@@ -1,0 +1,33 @@
+@use "../../foundation/global" as *;
+
+/* シングル・ページページの表 */
+.p-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    &__row,
+    &__column {
+        border: solid 1px $color--gray;
+    }
+
+    &__row {
+        height: 77px;
+    }
+
+    &__column {
+        padding:  26.5px 24px;
+        @include breakpoint(tablet) {
+            padding: 26.5px 30px;
+        }
+    
+        &.--1 {
+            width:41.7%;
+            @include breakpoint(tablet) {
+                width: 30%;
+            }
+            @include breakpoint(pc) {
+                width: 31.7%;
+            }
+        }
+    }
+}
