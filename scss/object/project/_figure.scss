@@ -1,7 +1,7 @@
 @use "../../foundation/global" as *;
 
 /* シングル・ページページのfigureタグ */
-.p-figure {
+.p-figure {     //画像左バージョン
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -15,7 +15,7 @@
         object-position: center;
     }
 
-    &.--right {
+    &.--right {     //画像右バージョン
         flex-direction: row-reverse;
     }
 }

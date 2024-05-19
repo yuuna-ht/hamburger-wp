@@ -3,11 +3,11 @@
 /* シングル・ページページの表 */
 .p-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse;  //表の線の隙間を無くして一重線にする
 
     &__row,
     &__column {
-        border: solid 1px $color--gray;
+        border: solid 1px $color--gray;     //表の線のスタイリング
     }
 
     &__row {

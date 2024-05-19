@@ -2,7 +2,7 @@
 
 /* メインビジュアル */
 .p-mainVisual {     //フロントページ
-    background-image: url(../../../images/mainVisual.png);
+    background-image: url(../../../images/mainVisual-front.jpg);
     height: $height--mainVisual;
     @include breakpoint(pc) {
         height: 27.6vw; //画面幅1%に対する高さを設定 画面幅に応じて高さを調整する
@@ -54,7 +54,7 @@
             line-height: 1.1;
         }
     }
-    .c-bold {
+    .c-bold {   //メニュータイトル横のpタグ
         font-size: 1.6rem;
         line-height: 1.2;
         color: $color--white;
@@ -90,13 +90,13 @@
     }
 }
 
-.p-mainVisual--page {
+.p-mainVisual--page {       //ページページ
     @extend .p-mainVisual--single;
     background-image: url(../../../images/mainVisual-page.jpg);
 
     &__title {
         @extend .p-mainVisual--single__title;
-        margin-left: 25px;
+        margin-left: 45px;
         @include breakpoint(tablet) {
             margin-left: 86px;
         }

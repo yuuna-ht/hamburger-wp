@@ -1,6 +1,6 @@
 @use "../../foundation/global" as *;
 
-.c-margin--top {    //シングル・ページページのアーティクル内テキスト間余白
+.c-margin--top {    //シングル・ページページのアーティクル内テキスト・要素間の余白
     margin-top: 30px;
     @include breakpoint(tablet) {
         margin-top: 60px;

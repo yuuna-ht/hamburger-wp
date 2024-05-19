@@ -3,10 +3,9 @@
 .c-button--gray {   //検索ボタン
     background: linear-gradient(90deg, #F2EDE9 0%, #DED8D3 100%);
     border: 1px solid $color--gray;
-    border-radius: 10px;
 }
 
-.c-button--white {
+.c-button--white {  //カードメニュー内白ボタン
     background-color: $color--white;
     border-radius: 25px;
 }

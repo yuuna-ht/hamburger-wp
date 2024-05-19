@@ -1,7 +1,7 @@
 @use "../../foundation/global" as *;
 
 /* フロントページ アクセス */
-.p-access {
+.p-access {     //最下層 マップ画像
     position: relative;
     background-color: $color--black;
     background-image: url(/images/map.jpg);
@@ -22,7 +22,7 @@
         }
     }
 
-    &__inner {
+    &__inner {  //テキスト部分の上下余白調整
         min-height: 691px;
         padding: 42px 0 57px;
         @include breakpoint(tablet) {

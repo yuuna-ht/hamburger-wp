@@ -1,6 +1,6 @@
 @use "../../foundation/global" as *;
 
-/* アーカイブページ メインコンテンツンツ幅・余白調整 */
+/* アーカイブ・アーカイブサーチページ メインコンテンツンツ幅・余白調整 */
 .p-archive {
     @include breakpoint(tablet) {
         min-width: 560px;

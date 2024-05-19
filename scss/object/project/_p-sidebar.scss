@@ -56,7 +56,7 @@
     }
 }
 
-.p-menu { 
+.p-menu {
     @include breakpoint(pc) {   //pc画面サイドバーの見出しとメニュータイトル間の余白
         margin-top: 90px;
     }

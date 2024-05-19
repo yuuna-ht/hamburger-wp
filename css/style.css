@@ -456,10 +456,6 @@ body.is-open {
   font-weight: 700;
 }
 
-.c-text--white {
-  color: #FFFFFF;
-}
-
 .c-readerText {
   display: none;
 }
@@ -467,7 +463,6 @@ body.is-open {
 .c-button--gray {
   background: linear-gradient(90deg, #F2EDE9 0%, #DED8D3 100%);
   border: 1px solid #707070;
-  border-radius: 10px;
 }
 
 .c-button--white {
@@ -564,16 +559,6 @@ body.is-open {
 /* アンダーラインのあるリンク */
 .c-link {
   text-decoration: underline;
-}
-
-.c-pagenation__icon {
-  width: 18px;
-  height: 18px;
-}
-.c-pagenation__icon::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f100";
 }
 
 .c-list--ordered {
@@ -792,6 +777,7 @@ body.is-open {
 .p-searchForm__submit {
   width: 90px;
   height: 46px;
+  border-radius: 10px;
   color: #707070;
   font-size: 16px;
   font-weight: 700;
@@ -1032,7 +1018,7 @@ body.is-open {
 
 /* メインビジュアル */
 .p-mainVisual, .p-mainVisual--single, .p-mainVisual--page, .p-mainVisual--archive {
-  background-image: url(../../../images/mainVisual.png);
+  background-image: url(../../../images/mainVisual-front.jpg);
   height: 285px;
 }
 @media (min-width: 1025px) {
@@ -1132,7 +1118,7 @@ body.is-open {
   background-image: url(../../../images/mainVisual-page.jpg);
 }
 .p-mainVisual--page__title {
-  margin-left: 25px;
+  margin-left: 45px;
 }
 @media (min-width: 600px) {
   .p-mainVisual--page__title {
@@ -1235,7 +1221,7 @@ body.is-open {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* アーカイブページ メインコンテンツンツ幅・余白調整 */
+/* アーカイブ・アーカイブサーチページ メインコンテンツンツ幅・余白調整 */
 @media (min-width: 600px) {
   .p-archive {
     min-width: 560px;
@@ -1397,7 +1383,7 @@ body.is-open {
   }
 }
 
-/* アーカイブページ イントロダクション */
+/* アーカイブ・アーカイブサーチページ イントロダクション */
 .p-introduction__title {
   font-size: 2.8rem;
   margin-bottom: 25px;
@@ -1430,11 +1416,11 @@ body.is-open {
     margin: 0 0 64px;
   }
 }
-.p-pagenation__pcList {
+.p-pagenation__notspList {
   display: none;
 }
 @media (min-width: 600px) {
-  .p-pagenation__pcList {
+  .p-pagenation__notspList {
     display: inline-block;
   }
 }
@@ -1576,6 +1562,9 @@ body.is-open {
 .p-article__codeBlock {
   background-color: #F5F5F5;
   padding: 50px 0 50px 50px;
+}
+.p-article__codeBlock__code {
+  font-family: "M PLUS 1p", sans-serif;
 }
 .p-article__button {
   width: 100%;

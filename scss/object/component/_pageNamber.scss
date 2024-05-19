@@ -13,13 +13,13 @@
         margin-right: 0;
     }
 
-    &:hover {
+    &:hover {   //マウスオーバーすると色が変わる
         background-color: rgba(112, 112, 112, 0.8);
         color: $color--white;
     }
 }
 
-.c-pageNamber--this {
+.c-pageNamber--this {   //現在閲覧しているページのページナンバー
     @extend .c-pageNamber;
     background-color: $color--brown;
     color: $color--white;

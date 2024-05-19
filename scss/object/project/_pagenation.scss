@@ -1,7 +1,7 @@
 @use "../../foundation/global" as *;
 
 /* ページネーション */
-.p-pagenation {
+.p-pagenation {     //ページネーション全体の調整
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,14 +17,14 @@
         margin: 0 0 64px;
     }
 
-    &__pcList {
+    &__notspList {  //tablet以上で出現するページナンバー
         display: none;
         @include breakpoint(tablet) {
             display: inline-block;
         }
     }
 
-    &__link {
+    &__link {   //ページネーションリンク「前へ」「次へ」
         display: inline-block;
         position: relative;
         top: 0;
@@ -37,7 +37,7 @@
         }
 
         &::before,
-        &::after {
+        &::after {      //矢印のベース
             content: "";
             border-top: solid 1px $color--gray;
             border-left: solid 1px $color--gray;
@@ -51,7 +51,7 @@
             }
         }
 
-        &.-pre {
+        &.-pre {      //逆くの字矢印
             &::before,
             &::after {
                 transform: rotate(-45deg);
@@ -70,7 +70,7 @@
             }
         }
 
-        &.-next {
+        &.-next {      //くの字矢印
             &::before,
             &::after {
                 transform: rotate(135deg);
