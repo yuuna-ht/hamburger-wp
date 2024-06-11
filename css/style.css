@@ -698,48 +698,49 @@ body.is-open {
     margin-top: 90px;
   }
 }
-.p-menu__title {
+.p-menu > li {
   font-size: 2.4rem;
   line-height: 1.5;
+  font-weight: 700;
 }
 @media (min-width: 1025px) {
-  .p-menu__title {
+  .p-menu > li {
     font-size: clamp(2rem, 1.5vw, 2.4rem);
   }
 }
-.p-menu__title:not(:first-child) {
+.p-menu > li:not(:first-child) {
   margin-top: 60px;
 }
 @media (min-width: 600px) {
-  .p-menu__title:not(:first-child) {
+  .p-menu > li:not(:first-child) {
     margin-top: 48px;
   }
 }
-.p-menu__item {
+.sub-menu {
   margin: 40px 0 0 20px;
 }
 @media (min-width: 600px) {
-  .p-menu__item {
+  .sub-menu {
     margin: 32px 0 0 20px;
   }
 }
 @media (min-width: 1025px) {
-  .p-menu__item {
+  .sub-menu {
     margin: clamp(30px, 2vw, 32px) 0 0 6.2%;
   }
 }
-.p-menu__list {
+.sub-menu > li {
   font-size: 2rem;
   line-height: 1.5;
   font-weight: 400;
   margin-bottom: clamp(18px, 1.05vw, 20px);
 }
 @media (min-width: 1025px) {
-  .p-menu__list {
+  .sub-menu > li {
     font-size: clamp(1.4rem, 1.2vw, 2rem);
   }
 }
-.p-menu__list:last-child {
+.sub-menu > li:last-child {
   margin-bottom: 0;
 }
 
@@ -865,13 +866,13 @@ body.is-open {
   }
 }
 .p-branchMenu__list.--takeOut {
-  background-image: url(/images/takeOut.jpg);
+  background-image: url(../images/takeOut.jpg);
 }
 .p-branchMenu__list.--takeOut .p-branchMenu__title {
   color: #EAEAEA;
 }
 .p-branchMenu__list.--eatIn {
-  background-image: url(/images/eatIn.jpg);
+  background-image: url(../images/eatIn.jpg);
 }
 .p-branchMenu__title {
   font-size: 4.1rem;
@@ -973,7 +974,7 @@ body.is-open {
 
 /* フッターの背景色 */
 .p-footer {
-  background-image: url(../../images/footer.png);
+  background-image: url(../images/footer.png);
 }
 .p-footer__nav {
   display: flex;
@@ -986,17 +987,17 @@ body.is-open {
     height: 30px;
   }
 }
-.p-footer__navList {
+.p-footer__nav li {
   font-size: 1.8rem;
   color: #FFFFFF;
   padding: 0 7px;
 }
 @media (min-width: 600px) {
-  .p-footer__navList {
+  .p-footer__nav li {
     font-size: 2rem;
   }
 }
-.p-footer__navList:last-child {
+.p-footer__nav li:last-child {
   border-left: 2px solid;
 }
 .p-footer__copy {
@@ -1018,7 +1019,7 @@ body.is-open {
 
 /* メインビジュアル */
 .p-mainVisual, .p-mainVisual--single, .p-mainVisual--page, .p-mainVisual--archive {
-  background-image: url(../../../images/mainVisual-front.jpg);
+  background-image: url(../images/mainVisual-front.jpg);
   height: 285px;
 }
 @media (min-width: 1025px) {
@@ -1047,7 +1048,7 @@ body.is-open {
 }
 
 .p-mainVisual--archive {
-  background-image: url(../../../images/mainVisual-archive.jpg);
+  background-image: url(../images/mainVisual-archive.jpg);
 }
 @media (min-width: 1025px) {
   .p-mainVisual--archive {
@@ -1091,7 +1092,7 @@ body.is-open {
 }
 
 .p-mainVisual--single, .p-mainVisual--page {
-  background-image: url(../../../images/mainVisual-single.jpg);
+  background-image: url(../images/mainVisual-single.jpg);
   background-size: 150%;
   height: 225px;
 }
@@ -1115,7 +1116,7 @@ body.is-open {
 }
 
 .p-mainVisual--page {
-  background-image: url(../../../images/mainVisual-page.jpg);
+  background-image: url(../images/mainVisual-page.jpg);
 }
 .p-mainVisual--page__title {
   margin-left: 45px;
@@ -1130,7 +1131,7 @@ body.is-open {
 .p-access {
   position: relative;
   background-color: #000000;
-  background-image: url(/images/map.jpg);
+  background-image: url(../images/map.jpg);
   width: 100%;
 }
 .p-access__overlay {

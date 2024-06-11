@@ -1,4 +1,4 @@
-$(function() {
+jQuery(function($) {    //  ラッパー関数を使用
     // ウィンドウのリサイズイベントが発生したときに実行
     function handleResize() {
         if ($(".l-sidebar").hasClass("is-open")) {
