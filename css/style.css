@@ -38,7 +38,7 @@ a {
 }
 
 a:hover, button:hover {
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 /* resset.dev • v5.0.2 */
@@ -1092,7 +1092,6 @@ body.is-open {
 }
 
 .p-mainVisual--single, .p-mainVisual--page {
-  background-image: url(../images/mainVisual-single.jpg);
   background-size: 150%;
   height: 225px;
 }
@@ -1430,6 +1429,12 @@ body.is-open {
   position: relative;
   top: 0;
   height: 35px;
+  width: 35px;
+  font-size: 14px; /* リンクのテキストサイズ */
+  line-height: 35px; /* リンクの高さに合わせた行の高さ */
+  text-decoration: none; /* リンクの下線を削除 */
+  color: #707070; /* リンクのテキスト色 */
+  padding: 0 15px; /* リンクのパディング */
 }
 @media (min-width: 600px) {
   .p-pagenation__link {
@@ -1506,6 +1511,16 @@ body.is-open {
   .p-article {
     padding: 63px 0 274px;
   }
+}
+.p-article ul, ol { /* 投稿記事、固定ページでul,olの丸や数字の箇条書き、インデントを有効にする*/
+  list-style-type: initial;
+  margin-left: 2rem;  /* インデント */
+}
+.p-article ul {
+  list-style-type: disc;
+}
+.p-article ol {
+  list-style-type: decimal;
 }
 .p-article h2 {
   font-size: 2.8rem;

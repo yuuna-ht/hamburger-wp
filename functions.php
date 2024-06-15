@@ -49,3 +49,43 @@
         add_editor_style( get_template_directory_uri() . "css/editor-style.css" );
     }
     add_action( 'admin_init', 'hamburger_theme_add_editor_styles' );
+
+    /* ファビコン設定でICOファイルを使用できるようにする */
+    function temporary_allow_all_uploads($mimes) {
+        $mimes['*'] = 'application/octet-stream';
+        return $mimes;
+    }
+    add_filter('upload_mimes', 'temporary_allow_all_uploads');
+
+    function custom_upload_mimes( $existing_mimes ) {
+        // ICOファイルを追加する
+        $existing_mimes['ico'] = 'image/vnd.microsoft.icon';
+        return $existing_mimes;
+    }
+    add_filter( 'upload_mimes', 'custom_upload_mimes' );
+
+    /* カスタム投稿タイプの利用 */
+    function create_branch_menus_post_type() {
+        $args = array(
+            'public' => true,
+            'label'  => 'ブランチメニュー',
+            'supports' => array( 'title', 'editor', 'thumbnail' ), // アイキャッチ画像をサポートする
+            'menu_icon' => 'dashicons-portfolio', // ダッシュアイコンからアイコンを選択
+        );
+        register_post_type( 'branch_menu', $args );
+    }
+    add_action( 'init', 'create_branch_menus_post_type' );
+    
+    // カスタムタクソノミーの登録
+    function custom_taxonomy() {
+        register_taxonomy(
+            'branch_menu_category', // タクソノミーのスラッグ
+            'branch_menu', // 関連付けるカスタム投稿タイプのスラッグ
+            array(
+                'label' => 'Branch Menu Categories', // タクソノミー名
+                'rewrite' => array( 'slug' => 'branch-menu-category' ), // スラッグの設定
+                'hierarchical' => true, // 階層型（カテゴリー形式）
+            )
+        );
+    }
+    add_action( 'init', 'custom_taxonomy' );
