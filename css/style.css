@@ -523,30 +523,6 @@ body.is-open {
   background-size: cover;
 }
 
-/* ページネーションのページナンバー */
-.c-pageNamber, .c-pageNamber--this {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 35px;
-  height: 35px;
-  margin-right: 15px;
-  border: 1px solid #707070;
-}
-.c-pageNamber:last-child, .c-pageNamber--this:last-child {
-  margin-right: 0;
-}
-.c-pageNamber:hover, .c-pageNamber--this:hover {
-  background-color: rgba(112, 112, 112, 0.8);
-  color: #FFFFFF;
-}
-
-.c-pageNamber--this {
-  background-color: #3C2A10;
-  color: #FFFFFF;
-  pointer-events: none;
-}
-
 .c-margin--top {
   margin-top: 30px;
 }
@@ -1130,7 +1106,6 @@ body.is-open {
 .p-access {
   position: relative;
   background-color: #000000;
-  background-image: url(../images/map.jpg);
   width: 100%;
 }
 .p-access__overlay {
@@ -1200,6 +1175,7 @@ body.is-open {
   color: #FFFFFF;
   line-height: 33px;
   margin: 29px 40px 0;
+  white-space: normal;
 }
 @media (min-width: 600px) {
   .p-access__text {
@@ -1211,6 +1187,10 @@ body.is-open {
     font-size: inherit;
     margin: 109px 134px 0 119px;
   }
+}
+.p-access__text >a {
+  text-decoration: underline;
+  
 }
 .p-access .p-map__overlay {
   position: absolute;
@@ -1396,7 +1376,7 @@ body.is-open {
 }
 
 /* ページネーション */
-.p-pagenation {
+.wp-pagenavi {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1404,47 +1384,41 @@ body.is-open {
   color: #707070;
 }
 @media (min-width: 600px) {
-  .p-pagenation {
+  .wp-pagenavi {
     height: 35px;
     justify-content: space-around;
   }
 }
 @media (min-width: 767px) {
-  .p-pagenation {
+  .wp-pagenavi {
     justify-content: center;
     gap: 15px;
     margin: 0 0 64px;
   }
 }
-.p-pagenation__notspList {
+.pages, .page, .current {
   display: none;
 }
 @media (min-width: 600px) {
-  .p-pagenation__notspList {
+  .pages, .page, .current {
     display: inline-block;
+    font-family: "Roboto", sans-serif;
   }
 }
-.p-pagenation__link {
+.previouspostslink, .nextpostslink {
   display: inline-block;
   position: relative;
-  top: 0;
-  height: 35px;
-  width: 35px;
-  font-size: 14px; /* リンクのテキストサイズ */
-  line-height: 35px; /* リンクの高さに合わせた行の高さ */
-  text-decoration: none; /* リンクの下線を削除 */
-  color: #707070; /* リンクのテキスト色 */
-  padding: 0 15px; /* リンクのパディング */
+  font-size: 14px;
+  line-height: 35px; /* tablet以上でのダブルアローの高さ調整 */
+  color: #707070;
+  padding: 0 15px; /* tablet以上でのダブルアローとページナンバー間のスペース保持 */
 }
 @media (min-width: 600px) {
-  .p-pagenation__link {
+  .previouspostslink, .nextpostslink {
     font-size: 0;
-    width: 18px;
-    top: -10px;
-    margin: 0 5px;
   }
 }
-.p-pagenation__link::before, .p-pagenation__link::after {
+.previouspostslink::before, .previouspostslink::after, .nextpostslink::before, .nextpostslink::after {
   content: "";
   border-top: solid 1px #707070;
   border-left: solid 1px #707070;
@@ -1452,49 +1426,69 @@ body.is-open {
   width: 15px;
   height: 15px;
   position: absolute;
-  top: 5px;
+  top: 10px;  /* ダブルアローを垂直方法の中央に配置 */
 }
-@media (min-width: 600px) {
-  .p-pagenation__link::before, .p-pagenation__link::after {
-    top: 10px;
-  }
-}
-.p-pagenation__link.-pre::before, .p-pagenation__link.-pre::after {
+.previouspostslink::before, .previouspostslink::after {
   transform: rotate(-45deg);
 }
-.p-pagenation__link.-pre::before {
+.previouspostslink::before {
   left: -30px;
 }
 @media (min-width: 600px) {
-  .p-pagenation__link.-pre::before {
+  .previouspostslink::before {
     left: 0;
   }
 }
-.p-pagenation__link.-pre::after {
+.previouspostslink::after {
   left: -20px;
 }
 @media (min-width: 600px) {
-  .p-pagenation__link.-pre::after {
+  .previouspostslink::after {
     left: 10px;
   }
 }
-.p-pagenation__link.-next::before, .p-pagenation__link.-next::after {
+.nextpostslink::before, .nextpostslink::after {
   transform: rotate(135deg);
 }
-.p-pagenation__link.-next::before {
+.nextpostslink::before {
   right: -30px;
 }
 @media (min-width: 600px) {
-  .p-pagenation__link.-next::before {
+  .nextpostslink::before {
     right: 0px;
   }
 }
-.p-pagenation__link.-next::after {
+.nextpostslink::after {
   right: -20px;
 }
 @media (min-width: 600px) {
-  .p-pagenation__link.-next::after {
+  .nextpostslink::after {
     right: 10px;
+  }
+}
+@media (min-width: 600px) {
+  .page, .current {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;
+    border: 1px solid #707070;
+  }
+}
+.page:last-child, .current:last-child {
+  margin-right: 0;
+}
+.page:hover, .current:hover {
+  background-color: rgba(112, 112, 112, 0.8);
+  color: #FFFFFF;
+}
+@media (min-width: 600px) { 
+  .current {
+    background-color: #3C2A10;
+    color: #FFFFFF;
+    pointer-events: none;
   }
 }
 
@@ -1546,9 +1540,9 @@ body.is-open {
   height: 33vw;
   max-height: 500px;
   -o-object-fit: cover;
-     object-fit: cover;
+    object-fit: cover;
   -o-object-position: center 80%;
-     object-position: center 80%;
+    object-position: center 80%;
 }
 .p-article__image--center {
   width: 79.9%;
@@ -1556,9 +1550,9 @@ body.is-open {
   max-width: 581px;
   max-height: 358px;
   -o-object-fit: cover;
-     object-fit: cover;
+    object-fit: cover;
   -o-object-position: center bottom;
-     object-position: center bottom;
+    object-position: center bottom;
   display: block;
   margin: 30px auto;
 }
@@ -1617,9 +1611,9 @@ body.is-open {
   width: 43%;
   height: 23.7vw;
   -o-object-fit: cover;
-     object-fit: cover;
+    object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+    object-position: center;
 }
 .p-figure.--right {
   flex-direction: row-reverse;
@@ -1646,9 +1640,9 @@ body.is-open {
   width: 100%;
   height: 61.2vw;
   -o-object-fit: cover;
-     object-fit: cover;
+    object-fit: cover;
   -o-object-position: center bottom;
-     object-position: center bottom;
+    object-position: center bottom;
 }
 @media (min-width: 600px) {
   .p-gallery__image {
