@@ -1376,7 +1376,7 @@ body.is-open {
 }
 
 /* ページネーション */
-.wp-pagenavi {
+.p-pagenation {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1384,28 +1384,27 @@ body.is-open {
   color: #707070;
 }
 @media (min-width: 600px) {
-  .wp-pagenavi {
+  .p-pagenation {
     height: 35px;
     justify-content: space-around;
   }
 }
 @media (min-width: 767px) {
-  .wp-pagenavi {
+  .p-pagenation {
     justify-content: center;
     gap: 15px;
     margin: 0 0 64px;
   }
 }
-.pages, .page, .current {
+.p-pagenation__pages, .p-pagenation__notspList, .c-pageNamber--this {
   display: none;
 }
 @media (min-width: 600px) {
-  .pages, .page, .current {
+  .p-pagenation__pages, .p-pagenation__notspList, .c-pageNamber, .c-pageNamber--this {
     display: inline-block;
-    font-family: "Roboto", sans-serif;
   }
 }
-.previouspostslink, .nextpostslink {
+.p-pagenation__link {
   display: inline-block;
   position: relative;
   font-size: 14px;
@@ -1414,11 +1413,11 @@ body.is-open {
   padding: 0 15px; /* tablet以上でのダブルアローとページナンバー間のスペース保持 */
 }
 @media (min-width: 600px) {
-  .previouspostslink, .nextpostslink {
+  .p-pagenation__link {
     font-size: 0;
   }
 }
-.previouspostslink::before, .previouspostslink::after, .nextpostslink::before, .nextpostslink::after {
+.p-pagenation__link::before, .p-pagenation__link::after {
   content: "";
   border-top: solid 1px #707070;
   border-left: solid 1px #707070;
@@ -1426,48 +1425,58 @@ body.is-open {
   width: 15px;
   height: 15px;
   position: absolute;
-  top: 10px;  /* ダブルアローを垂直方法の中央に配置 */
+  top: 10px;
 }
-.previouspostslink::before, .previouspostslink::after {
+.p-pagenation__link.-pre::before, .p-pagenation__link.-pre::after {
   transform: rotate(-45deg);
 }
-.previouspostslink::before {
+.p-pagenation__link.-pre::before {
   left: -30px;
 }
 @media (min-width: 600px) {
-  .previouspostslink::before {
+  .p-pagenation__link.-pre::before {
     left: 0;
   }
 }
-.previouspostslink::after {
+.p-pagenation__link.-pre::after {
   left: -20px;
 }
 @media (min-width: 600px) {
-  .previouspostslink::after {
+  .p-pagenation__link.-pre::after {
     left: 10px;
   }
 }
-.nextpostslink::before, .nextpostslink::after {
+.p-pagenation__link.-next {
+  margin-left: auto;
+}
+@media (min-width: 600px) {
+  .p-pagenation__link.-next {
+    margin-left: 0;
+  }
+}
+.p-pagenation__link.-next::before, .p-pagenation__link.-next::after {
   transform: rotate(135deg);
 }
-.nextpostslink::before {
+.p-pagenation__link.-next::before {
   right: -30px;
 }
 @media (min-width: 600px) {
-  .nextpostslink::before {
+  .p-pagenation__link.-next::before {
     right: 0px;
   }
 }
-.nextpostslink::after {
+.p-pagenation__link.-next::after {
   right: -20px;
 }
 @media (min-width: 600px) {
-  .nextpostslink::after {
+  .p-pagenation__link.-next::after {
     right: 10px;
   }
 }
+
+/* ページネーションのページナンバー */
 @media (min-width: 600px) {
-  .page, .current {
+  .p-pagenation__notspList, .c-pageNamber--this {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1477,19 +1486,17 @@ body.is-open {
     border: 1px solid #707070;
   }
 }
-.page:last-child, .current:last-child {
+.p-pagenation__notspList:last-child, .c-pageNamber--this:last-child {
   margin-right: 0;
 }
-.page:hover, .current:hover {
+.p-pagenation__notspList:hover, .c-pageNamber--this:hover {
   background-color: rgba(112, 112, 112, 0.8);
   color: #FFFFFF;
 }
-@media (min-width: 600px) { 
-  .current {
-    background-color: #3C2A10;
-    color: #FFFFFF;
-    pointer-events: none;
-  }
+.c-pageNamber--this {
+  background-color: #3C2A10;
+  color: #FFFFFF;
+  pointer-events: none;
 }
 
 /* シングル・ページページのアーティクル */
@@ -1540,9 +1547,9 @@ body.is-open {
   height: 33vw;
   max-height: 500px;
   -o-object-fit: cover;
-    object-fit: cover;
+     object-fit: cover;
   -o-object-position: center 80%;
-    object-position: center 80%;
+     object-position: center 80%;
 }
 .p-article__image--center {
   width: 79.9%;
@@ -1550,9 +1557,9 @@ body.is-open {
   max-width: 581px;
   max-height: 358px;
   -o-object-fit: cover;
-    object-fit: cover;
+     object-fit: cover;
   -o-object-position: center bottom;
-    object-position: center bottom;
+     object-position: center bottom;
   display: block;
   margin: 30px auto;
 }
@@ -1611,9 +1618,9 @@ body.is-open {
   width: 43%;
   height: 23.7vw;
   -o-object-fit: cover;
-    object-fit: cover;
+     object-fit: cover;
   -o-object-position: center;
-    object-position: center;
+     object-position: center;
 }
 .p-figure.--right {
   flex-direction: row-reverse;
@@ -1640,9 +1647,9 @@ body.is-open {
   width: 100%;
   height: 61.2vw;
   -o-object-fit: cover;
-    object-fit: cover;
+     object-fit: cover;
   -o-object-position: center bottom;
-    object-position: center bottom;
+     object-position: center bottom;
 }
 @media (min-width: 600px) {
   .p-gallery__image {
@@ -1696,5 +1703,68 @@ body.is-open {
   .p-table__column.--1 {
     width: 31.7%;
   }
+}
+
+/* --- 404 page --- */
+.p-mainVisual--404 {
+  background-image: url(../images/mainVisual-front.jpg);
+  height: 285px;
+  text-align: center;
+}
+.p-mainVisual--404 {
+  @media (min-width: 1025px) {
+    height: 27.6vw; /* 画面幅1%に対する高さを設定 画面幅に応じて高さを調整する */
+    min-height: 285px;
+  }
+}
+.p-mainVisual__title--404 {
+  font-size: 8vw;
+  color: white;
+  line-height: 1.48;
+  transition: all 0.4s ease-in;
+  margin: 0 auto;
+}
+.p-mainVisual__title--404 {
+  @media (min-width: 1025px) {
+      font-size: 6vw;
+      line-height: 1.475;
+  }
+}
+.p-404__wrapper {
+  text-align: center;
+}
+.p-404__article {
+  padding: 50px 0 60px;
+}
+.p-404__title {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+.p-404__text {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+.p-article__button--404 {
+  width: 100%;
+  height: 24.1vw;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+@media (min-width: 600px) {
+  .p-article__button--404 {
+    width: 60.1%;
+    height: 14.5vw;
+  }
+}
+@media (min-width: 1025px) {
+  .p-article__button--404 {
+    width: 31.7%;
+    height: 7.6vw;
+  }
+}
+.p-404__homeLink {
+  color: #3C2A10;
+  font-size: 150%;
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */

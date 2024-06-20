@@ -54,18 +54,7 @@
             </ul>
         </section>
         <!--  ページネーション  -->
-        <ul class="p-pagenation">
-            <?php
-            the_posts_pagination(array(
-                'mid_size' => 2,
-                'prev_text' => '<span class="p-pagenation__link -pre"></span>',
-                'next_text' => '<span class="p-pagenation__link -next"></span>',
-                'screen_reader_text' => __('ページナビゲーション', 'textdomain'),
-                'before_page_number' => '<li class="p-pagenation__notspList c-roboto">',
-                'after_page_number' => '</li>',
-            ));
-            ?>
-        </ul>
+        <?php wp_pagenavi(); ?>
     </div>
 </main>
 <?php get_sidebar(); ?>

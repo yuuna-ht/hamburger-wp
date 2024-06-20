@@ -54,6 +54,14 @@
     function temporary_allow_all_uploads($mimes) {
         $mimes['*'] = 'application/octet-stream';
         return $mimes;
+    }if (function_exists('acf_add_options_page')) {
+        acf_add_options_page(array(
+            'page_title'    => 'Theme General Settings',
+            'menu_title'    => 'Theme Settings',
+            'menu_slug'     => 'theme-general-settings',
+            'capability'    => 'edit_theme_options',
+            'redirect'      => false
+        ));
     }
     add_filter('upload_mimes', 'temporary_allow_all_uploads');
 
@@ -65,18 +73,37 @@
     add_filter( 'upload_mimes', 'custom_upload_mimes' );
 
     /* カスタム投稿タイプの利用 */
-    function create_branch_menus_post_type() {
-        $args = array(
+    function create_custom_post_types() {
+        // ブランチメニューのカスタム投稿タイプ
+        $args_branch_menu = array(
             'public' => true,
             'label'  => 'ブランチメニュー',
             'supports' => array( 'title', 'editor', 'thumbnail' ), // アイキャッチ画像をサポートする
             'menu_icon' => 'dashicons-portfolio', // ダッシュアイコンからアイコンを選択
         );
-        register_post_type( 'branch_menu', $args );
+        register_post_type( 'branch_menu', $args_branch_menu );
+
+        // メインビジュアルのカスタム投稿タイプ
+        $args_main_visual = array(
+            'public' => true,
+            'label'  => 'Main Visual', // カスタム投稿タイプのラベル
+            'supports' => array( 'title', 'thumbnail' ), // タイトルとアイキャッチ画像をサポート
+            'menu_icon' => 'dashicons-format-image', // メニューアイコンを指定
+        );
+        register_post_type( 'main_visual', $args_main_visual );
+
+        // アクセスセクションのカスタム投稿タイプ
+        $args_access_section = array(
+            'public' => true,
+            'label'  => 'Access', // カスタム投稿タイプのラベル
+            'supports' => array( 'title', 'editor', 'thumbnail' ), // タイトル、エディター、アイキャッチ画像をサポート
+            'menu_icon' => 'dashicons-location', // メニューアイコンを指定
+        );
+        register_post_type( 'access_section', $args_access_section );
     }
-    add_action( 'init', 'create_branch_menus_post_type' );
-    
-    // カスタムタクソノミーの登録
+    add_action( 'init', 'create_custom_post_types' );
+
+    /* カスタムタクソノミーの登録 */
     function custom_taxonomy() {
         register_taxonomy(
             'branch_menu_category', // タクソノミーのスラッグ
@@ -89,3 +116,43 @@
         );
     }
     add_action( 'init', 'custom_taxonomy' );
+
+    /* カテゴリー編集画面にカスタムフィールドを追加 */
+    function add_category_custom_fields($tag) {
+        $term_id = $tag->term_id;
+        $category_subtitle = get_term_meta($term_id, 'category_subtitle', true);
+        ?>
+        <tr class="form-field">
+            <th scope="row" valign="top"><label for="category_subtitle"><?php _e('小見出し'); ?></label></th>
+            <td>
+                <input type="text" name="category_subtitle" id="category_subtitle" value="<?php echo esc_attr($category_subtitle) ? esc_attr($category_subtitle) : ''; ?>" />
+                <p class="description"><?php _e('カテゴリーの小見出しを入力します。'); ?></p>
+            </td>
+        </tr>
+        <?php
+    }
+    add_action('edit_category_form_fields', 'add_category_custom_fields');
+
+    // カテゴリーのカスタムフィールドを保存
+        function save_category_custom_fields($term_id) {
+        if (isset($_POST['category_subtitle'])) {
+            update_term_meta($term_id, 'category_subtitle', sanitize_text_field($_POST['category_subtitle']));
+        }
+    }
+    add_action('edited_category', 'save_category_custom_fields');
+    add_action('create_category', 'save_category_custom_fields');
+
+    /* ページネーション フィルターを使用してクラス名をカスタマイズ */
+    function custom_pagenavi_html($html) {
+    // クラス名の置換を正確に行う
+    $html = preg_replace('/\bwp-pagenavi\b/', 'p-pagenation', $html);
+    $html = preg_replace('/\bpages\b/', 'p-pagenation__pages c-roboto', $html);
+    $html = preg_replace('/\bpreviouspostslink\b/', 'p-pagenation__link -pre', $html);
+    $html = preg_replace('/\bnextpostslink\b/', 'p-pagenation__link -next', $html);
+    $html = preg_replace('/\bcurrent\b/', 'p-pagenation__notspList c-pageNamber--this', $html);
+    $html = preg_replace('/\bpage larger\b/', 'p-pagenation__notspList c-roboto', $html);
+    $html = preg_replace('/\bpage smaller\b/', 'p-pagenation__notspList c-roboto', $html);
+
+    return $html;
+}
+add_filter('wp_pagenavi', 'custom_pagenavi_html');

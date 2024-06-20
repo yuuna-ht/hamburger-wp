@@ -3,9 +3,27 @@
 <!-- メイン -->
 <main class="l-main p-main c-main__grid">
     <!-- メインビジュアル -->
-    <div class="p-mainVisual c-mainVisual">
-        <h2 class="p-mainVisual__title c-bold">ダミーサイト</h2>
-    </div>
+    <?php
+    $args = array(
+        'post_type' => 'main_visual',
+        'posts_per_page' => 1, // 表示するメインビジュアルの数
+    );
+    $main_visuals = new WP_Query($args);
+    if ($main_visuals->have_posts()) :
+        while ($main_visuals->have_posts()) : $main_visuals->the_post();
+            $post_id = get_the_ID();
+            $post_thumbnail_url = get_the_post_thumbnail_url($post_id, 'full'); // アイキャッチ画像のURLを取得
+    ?>
+            <div class="p-mainVisual c-mainVisual" style="background-image: url('<?php echo esc_url($post_thumbnail_url); ?>');">
+                <h2 class="p-mainVisual__title c-bold"><?php the_title(); ?></h2>
+            </div>
+    <?php
+        endwhile;
+        wp_reset_postdata();
+    else :
+        echo '<p>メインビジュアルがありません。</p>';
+    endif;
+    ?>
 
     <!-- ブランチメニュー -->
     <div class="c-wrapper">
@@ -30,7 +48,8 @@ if ($branch_menus->have_posts()) :
             foreach ($terms as $term) {
                 if ($term->slug == 'takeout' || $term->slug == 'eatin') {
                     // カテゴリーのリンクを取得
-                    $category_id = get_term_by('slug', 'eatin', 'category')->term_id; // 'eatin' を対象に変更する場合は必要に応じて変更
+                    $category_slug = $term->slug;
+                    $category_id = get_term_by('slug', $category_slug, 'category')->term_id;
                     $category_link = esc_url(get_category_link($category_id));
                     break;
                 }
@@ -51,7 +70,7 @@ if ($branch_menus->have_posts()) :
                 <!-- 他のカスタムフィールドや内容を表示 -->
             </div>
         </a>
-        <?php
+    <?php
     endwhile;
     wp_reset_postdata();
 else :
@@ -62,14 +81,32 @@ endif;
     </div>
 
     <!-- アクセス -->
-    <section class="p-access c-background__image">
-        <div class="p-map__overlay"></div>
-        <div class="p-access__overlay"></div>
-        <div class="p-access__inner c-bold">
-            <h2 class="p-access__title">見出しが入ります</h2>
-            <p class="p-access__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
-        </div>
-    </section>
+    <?php
+    $args_access_section = array(
+        'post_type' => 'access_section',
+        'posts_per_page' => 1,
+    );
+    $access_sections = new WP_Query($args_access_section);
+    if ($access_sections->have_posts()) :
+        while ($access_sections->have_posts()) : $access_sections->the_post();
+            $post_id_access = get_the_ID();
+            $access_content = get_the_content();
+    ?>
+            <section class="p-access c-background__image" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
+                <div class="p-map__overlay"></div>
+                <div class="p-access__overlay"></div>
+                <div class="p-access__inner c-bold">
+                    <h2 class="p-access__title"><?php the_title(); ?></h2>
+                    <div class="p-access__text"><?php echo $access_content; ?></div>
+                </div>
+            </section>
+    <?php
+        endwhile;
+        wp_reset_postdata();
+    else :
+        echo '<p>アクセスセクションがありません。</p>';
+    endif;
+    ?>
 </main>
 
 <?php get_sidebar(); ?>
