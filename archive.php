@@ -47,10 +47,11 @@
                         </li>
                         <?php
                     endwhile;
-                else :
-                    echo '<p>表示する記事がありません</p>';
-                endif;
-                ?>
+                else : ?>
+                    <p><?php _e('There are no articles to display.', 'hamburger'); ?></p>
+                <?php 
+            endif;
+            ?>
             </ul>
         </section>
         <!--  ページネーション  -->

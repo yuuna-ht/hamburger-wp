@@ -1,4 +1,10 @@
 <?php
+    /* 翻訳ファイル読み込み */
+    function hamburger_theme_setup(){
+        load_theme_textdomain( 'hamburger', get_template_directory() . '/languages' );
+        }
+    add_action( 'after_setup_theme', 'hamburger_theme_setup' );    
+
     /* テーマサポート */
     //  カスタムメニューの有効化
     add_theme_support( 'menus' );
@@ -123,10 +129,10 @@
         $category_subtitle = get_term_meta($term_id, 'category_subtitle', true);
         ?>
         <tr class="form-field">
-            <th scope="row" valign="top"><label for="category_subtitle"><?php _e('小見出し'); ?></label></th>
+            <th scope="row" valign="top"><label for="category_subtitle">小見出し</label></th>
             <td>
                 <input type="text" name="category_subtitle" id="category_subtitle" value="<?php echo esc_attr($category_subtitle) ? esc_attr($category_subtitle) : ''; ?>" />
-                <p class="description"><?php _e('カテゴリーの小見出しを入力します。'); ?></p>
+                <p class="description">カテゴリーの小見出しを入力します。</p>
             </td>
         </tr>
         <?php
@@ -156,3 +162,4 @@
     return $html;
 }
 add_filter('wp_pagenavi', 'custom_pagenavi_html');
+

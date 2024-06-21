@@ -12,7 +12,7 @@
         <section class="p-archive__main">
             <h2 class="p-introduction__title c-bold">「<?php echo esc_html(get_search_query()); ?>」の検索結果です。</h2>
             <?php if ( have_posts() ) : ?>
-                <p class="p-introduction__text">検索結果の一覧を表示します。</p>
+                <p class="p-introduction__text"><?php _e('A list of search results will be displayed.', 'hamburger'); ?></p>
             <?php else : ?>
                 <p class="p-introduction__text">「<?php echo esc_html(get_search_query()); ?>」は見つかりませんでした。</p>
             <?php endif; ?>
@@ -46,10 +46,11 @@
                         </li>
                         <?php
                     endwhile;
-                else :
-                    echo '<p>表示する投稿はありません。</p>';
-                endif;
-                ?>
+                else : ?>
+                    <p><?php _e('There are no posts to display.', 'hamburger'); ?></p>
+                <?php 
+            endif;
+            ?>
             </ul>
         </section>
         <!--  ページネーション  -->
