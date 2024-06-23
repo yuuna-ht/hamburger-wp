@@ -91,8 +91,14 @@ endif;
         while ($access_sections->have_posts()) : $access_sections->the_post();
             $post_id_access = get_the_ID();
             $access_content = get_the_content();
+            $map_embed_code = get_field('map_embed_code'); // ACFで追加したフィールドの値を取得
     ?>
             <section class="p-access c-background__image" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
+            <?php if ($map_embed_code) : ?>
+                <div class="p-access__embedCode">
+                    <?php echo $map_embed_code; ?>
+                </div>
+            <?php endif; ?>
                 <div class="p-map__overlay"></div>
                 <div class="p-access__overlay"></div>
                 <div class="p-access__inner c-bold">

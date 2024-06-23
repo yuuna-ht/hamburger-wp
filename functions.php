@@ -41,8 +41,6 @@
         // CSS読み込み
         wp_enqueue_style( 'ress', get_theme_file_uri( 'css/ress.css' ), array(), '5.0.2' );
         wp_enqueue_style( 'main-style', get_theme_file_uri( 'css/style.css' ), array(), '1.0.0' );
-        // Font Awesome
-        wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0', 'all' );
         // jQueryを読み込む
         wp_enqueue_script( 'jquery' );
         // メインのスクリプトを読み込む
@@ -55,73 +53,6 @@
         add_editor_style( get_template_directory_uri() . "css/editor-style.css" );
     }
     add_action( 'admin_init', 'hamburger_theme_add_editor_styles' );
-
-    /* ファビコン設定でICOファイルを使用できるようにする */
-    function temporary_allow_all_uploads($mimes) {
-        $mimes['*'] = 'application/octet-stream';
-        return $mimes;
-    }if (function_exists('acf_add_options_page')) {
-        acf_add_options_page(array(
-            'page_title'    => 'Theme General Settings',
-            'menu_title'    => 'Theme Settings',
-            'menu_slug'     => 'theme-general-settings',
-            'capability'    => 'edit_theme_options',
-            'redirect'      => false
-        ));
-    }
-    add_filter('upload_mimes', 'temporary_allow_all_uploads');
-
-    function custom_upload_mimes( $existing_mimes ) {
-        // ICOファイルを追加する
-        $existing_mimes['ico'] = 'image/vnd.microsoft.icon';
-        return $existing_mimes;
-    }
-    add_filter( 'upload_mimes', 'custom_upload_mimes' );
-
-    /* カスタム投稿タイプの利用 */
-    function create_custom_post_types() {
-        // ブランチメニューのカスタム投稿タイプ
-        $args_branch_menu = array(
-            'public' => true,
-            'label'  => 'ブランチメニュー',
-            'supports' => array( 'title', 'editor', 'thumbnail' ), // アイキャッチ画像をサポートする
-            'menu_icon' => 'dashicons-portfolio', // ダッシュアイコンからアイコンを選択
-        );
-        register_post_type( 'branch_menu', $args_branch_menu );
-
-        // メインビジュアルのカスタム投稿タイプ
-        $args_main_visual = array(
-            'public' => true,
-            'label'  => 'Main Visual', // カスタム投稿タイプのラベル
-            'supports' => array( 'title', 'thumbnail' ), // タイトルとアイキャッチ画像をサポート
-            'menu_icon' => 'dashicons-format-image', // メニューアイコンを指定
-        );
-        register_post_type( 'main_visual', $args_main_visual );
-
-        // アクセスセクションのカスタム投稿タイプ
-        $args_access_section = array(
-            'public' => true,
-            'label'  => 'Access', // カスタム投稿タイプのラベル
-            'supports' => array( 'title', 'editor', 'thumbnail' ), // タイトル、エディター、アイキャッチ画像をサポート
-            'menu_icon' => 'dashicons-location', // メニューアイコンを指定
-        );
-        register_post_type( 'access_section', $args_access_section );
-    }
-    add_action( 'init', 'create_custom_post_types' );
-
-    /* カスタムタクソノミーの登録 */
-    function custom_taxonomy() {
-        register_taxonomy(
-            'branch_menu_category', // タクソノミーのスラッグ
-            'branch_menu', // 関連付けるカスタム投稿タイプのスラッグ
-            array(
-                'label' => 'Branch Menu Categories', // タクソノミー名
-                'rewrite' => array( 'slug' => 'branch-menu-category' ), // スラッグの設定
-                'hierarchical' => true, // 階層型（カテゴリー形式）
-            )
-        );
-    }
-    add_action( 'init', 'custom_taxonomy' );
 
     /* カテゴリー編集画面にカスタムフィールドを追加 */
     function add_category_custom_fields($tag) {
