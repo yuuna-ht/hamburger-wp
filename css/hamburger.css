@@ -1,8 +1,5 @@
 @charset "UTF-8";
-/* フォント */
-/* 色 */
-/* 背景色 */
-/* 高さ */
+
 html {
   font-size: 62.5%;
 }
@@ -1478,6 +1475,15 @@ body.is-open {
     right: 10px;
   }
 }
+.p-pagenation__extend {
+  display: none;
+}
+@media (min-width: 600px) {
+  .p-pagenation__extend {
+    display: block;
+  }
+}
+
 
 /* ページネーションのページナンバー */
 @media (min-width: 600px) {
@@ -1504,7 +1510,7 @@ body.is-open {
   pointer-events: none;
 }
 
-/* シングル・ページページのアーティクル */
+/* 投稿・固定ページのアーティクル上下の余白調整 */
 .p-article {
   padding: 34px 0 69px;
 }
@@ -1518,195 +1524,144 @@ body.is-open {
     padding: 63px 0 274px;
   }
 }
-.p-article ul, ol { /* 投稿記事、固定ページでul,olの丸や数字の箇条書き、インデントを有効にする*/
-  list-style-type: initial;
-  margin-left: 2rem;  /* インデント */
-}
+
+/* 投稿・固定記事のスタイル調整 */
+/* リストのスタイリング */
 .p-article ul {
-  list-style-type: disc;
+  margin-bottom: 30px;
+  list-style-type: none;
 }
 .p-article ol {
   list-style-type: decimal;
+  margin-bottom: 30px;
 }
+@media (min-width: 600px) {
+  .p-article ul, ol {
+    margin-left: 50px;
+  }
+}
+.p-article ol ol {
+  margin: 17px 18px;
+}
+.p-article ul ul {
+  margin: 17px 18px;
+}
+
+/* テキストのスタイリング */
 .p-article h2 {
   font-size: 2.8rem;
+  margin-bottom: 30px;
 }
 @media (min-width: 600px) {
   .p-article h2 {
     font-size: 3.6rem;
+    margin-bottom: 60px;
   }
 }
 .p-article h3 {
   font-size: 2.4rem;
+  margin-bottom: 30px;
 }
 @media (min-width: 600px) {
   .p-article h3 {
     font-size: 2.8rem;
+    margin-bottom: 60px;
   }
 }
 .p-article h4, .p-article h5, .p-article h6 {
   font-size: 2rem;
-}
-.p-article__image {
-  width: 100%;
-  height: 33vw;
-  max-height: 500px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center 80%;
-     object-position: center 80%;
-}
-.p-article__image--center {
-  width: 79.9%;
-  height: 49.5vw;
-  max-width: 581px;
-  max-height: 358px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center bottom;
-     object-position: center bottom;
-  display: block;
-  margin: 30px auto;
+  margin-bottom: 30px;
 }
 @media (min-width: 600px) {
-  .p-article__image--center {
-    margin: 60px auto;
+  .p-article h4, .p-article h5, .p-article h6 {
+    margin-bottom: 60px;
   }
+}
+.p-article p {
+  margin-bottom: 30px;
 }
 @media (min-width: 600px) {
-  .p-article__list {
-    margin-left: 50px;
-  }
-}
-.p-article__sublist {
-  margin: 17px 18px;
-}
-.p-article__codeBlock {
-  background-color: #F5F5F5;
-  padding: 50px 0 50px 50px;
-}
-.p-article__codeBlock__code {
-  font-family: "M PLUS 1p", sans-serif;
-}
-.p-article__button {
-  width: 100%;
-  height: 24.1vw;
-  border-radius: 20px;
-}
-@media (min-width: 600px) {
-  .p-article__button {
-    width: 60.1%;
-    height: 14.5vw;
-  }
-}
-@media (min-width: 1025px) {
-  .p-article__button {
-    width: 31.7%;
-    height: 7.6vw;
-  }
-}
-@media (min-width: 600px) {
-  .p-article__text {
-    font-size: 2.4rem;
+  .p-article p {
+    margin-bottom: 60px;
   }
 }
 
-/* シングル・ページページのfigureタグ */
-.p-figure {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 3%;
-}
-.p-figure__image {
-  width: 43%;
-  height: 23.7vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-}
-.p-figure.--right {
-  flex-direction: row-reverse;
-}
-
-/* シングル・ページページのギャラリー */
-.p-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* 画像、メディアとテキスト、ギャラリーの調整 */
+.p-article figure {
+  margin-bottom: 30px;
 }
 @media (min-width: 600px) {
-  .p-gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .p-article figure {
+    margin-bottom: 60px;
   }
 }
-@media (min-width: 1025px) {
-  .p-gallery {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+.p-article .size-full img {
+  width: 100vw;
 }
-.p-gallery__image {
-  width: 100%;
-  height: 61.2vw;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center bottom;
-     object-position: center bottom;
+.p-article .wp-block-media-text {
+  margin-bottom: 30px;
 }
 @media (min-width: 600px) {
-  .p-gallery__image {
-    width: 100%;
-    height: auto;
+  .p-article .wp-block-media-text {
+    margin-bottom: 60px;
   }
+}
+.p-article .wp-block-gallery {
+  margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+  .p-article .wp-block-gallery {
+    margin-bottom: 60px;
+  }
+}
+.p-particle .wp-block-gallery .wp-block-image > img {
+  margin-bottom: 0;
 }
 
 /* 引用ブロックのスタイリング */
-.p-quote {
-  background-color: #F5F5F5;
+.p-article blockquote {
   padding: 30px 18px;
+  margin-bottom: 30px;
 }
 @media (min-width: 600px) {
-  .p-quote {
+  .p-article blockquote {
     padding: 50px 60px;
+    margin-bottom: 60px;
   }
 }
-.p-quote__cite .c-link {
+.p-article cite {
+  font-style: normal;
+  margin-top: 30px;
+}
+@media (min-width: 600px) {
+  .p-article cite {
+    margin-top: 60px;
+  }
+}
+.p-article cite > a {
   color: #4A6C9B;
+  text-decoration: underline;
 }
 
-/* シングル・ページページの表 */
-.p-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-.p-table__row, .p-table__column {
-  border: solid 1px #707070;
-}
-.p-table__row {
-  height: 77px;
-}
-.p-table__column {
-  padding: 26.5px 24px;
+/* コードのスタイリング */
+.p-article pre {
+  padding: 50px 0 50px 50px;
+  font-family: "M PLUS 1p", sans-serif;
+  margin-bottom: 30px;
 }
 @media (min-width: 600px) {
-  .p-table__column {
-    padding: 26.5px 30px;
+  .p-article pre {
+    margin-bottom: 60px;
   }
 }
-.p-table__column.--1 {
-  width: 41.7%;
+
+/* ボタンのスタイリング */
+.p-article .wp-block-button {
+  margin-bottom: 30px;
 }
 @media (min-width: 600px) {
-  .p-table__column.--1 {
-    width: 30%;
-  }
-}
-@media (min-width: 1025px) {
-  .p-table__column.--1 {
-    width: 31.7%;
+  .p-article .wp-block-button {
+    margin-bottom: 60px;
   }
 }
 

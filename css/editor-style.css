@@ -1,1 +1,174 @@
-@import url( 'style.css' );
+@charset "UTF-8";
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 400;
+    font-family: "M PLUS 1p", sans-serif;
+    color: #3C2A10;
+    line-height: 23.76px;
+    overflow-x: hidden;
+    line-height: 1.5;
+    background-color: #FFFDFB;
+}
+
+h1, h2, h3, h3, h4, h5, h6, p, figure {
+    margin: 0;
+    padding: 0;
+}
+
+  /* テキストのスタイリング */
+h1 {
+    font-size: 3.6rem;
+    margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+    h1 {
+        font-size: 6rem;
+        margin-bottom: 60px;
+    }
+}
+
+h2 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+    h2 {
+        font-size: 3.6rem;
+        margin-bottom: 60px;
+    }
+}
+h3 {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+    h3 {
+        font-size: 2.8rem;
+        margin-bottom: 60px;
+    }
+}
+h4, h5, h6 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+    h4, h5, h6 {
+        margin-bottom: 60px;
+    }
+}
+p {
+    margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+    p {
+        margin-bottom: 60px;
+    }
+}
+
+/* リストのスタイリング */
+ul {
+    margin-bottom: 30px;
+    list-style-type: none;
+}
+ol {
+    list-style-type: decimal;
+    margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+    ul, ol {
+        margin-left: 50px;
+    }
+}
+ol ol {
+    margin: 17px 18px;
+}
+ul ul {
+    margin: 17px 18px;
+}
+
+/* 画像、メディアとテキスト、ギャラリーの調整 */
+figure {
+    margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+    figure {
+        margin-bottom: 60px;
+    }
+}
+.wp-block-image.size-full {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+.wp-block-media-text__content {
+    margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+    .wp-block-media-text__content {
+        margin-bottom: 60px;
+    }
+}
+.wp-block-gallery {
+    margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+    .wp-block-gallery {
+        margin-bottom: 60px;
+    }
+}
+.wp-block-gallery .wp-block-image > img {
+    margin-bottom: 0;
+}
+
+  /* 引用ブロックのスタイリング */
+blockquote {
+    padding: 30px 18px;
+    margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+    blockquote {
+        padding: 50px 60px;
+        margin-bottom: 60px;
+    }
+}
+cite {
+    font-style: normal;
+    margin-top: 30px;
+}
+@media (min-width: 600px) {
+    cite {
+        margin-top: 60px;
+    }
+}
+cite > a {
+    color: #4A6C9B;
+    text-decoration: underline;
+}
+
+/* コードのスタイリング */
+pre {
+    padding: 50px 0 50px 50px;
+    font-family: "M PLUS 1p", sans-serif;
+    margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+    pre {
+        margin-bottom: 60px;
+    }
+}
+
+  /* ボタンのスタイリング */
+.wp-block-button {
+    margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+    .wp-block-button {
+        margin-bottom: 60px;
+    }
+}

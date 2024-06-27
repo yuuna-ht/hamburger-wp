@@ -40,7 +40,7 @@
         wp_enqueue_style( 'roboto', 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap', array() );
         // CSS読み込み
         wp_enqueue_style( 'ress', get_theme_file_uri( 'css/ress.css' ), array(), '5.0.2' );
-        wp_enqueue_style( 'main-style', get_theme_file_uri( 'css/style.css' ), array(), '1.0.0' );
+        wp_enqueue_style( 'main-style', get_theme_file_uri( 'css/hamburger.css' ), array(), '1.0.0' );
         // jQueryを読み込む
         wp_enqueue_script( 'jquery' );
         // メインのスクリプトを読み込む
@@ -50,9 +50,10 @@
 
     /* エディター側でのスタイリングを有効に */
     function hamburger_theme_add_editor_styles() {
-        add_editor_style( get_template_directory_uri() . "css/editor-style.css" );
+        add_theme_support('editor-styles'); //テーマがエディタースタイルをサポートすることを知らせる
+        add_editor_style('/css/editor-style.css');  //ブロックエディター用のスタイルシートを指定する
     }
-    add_action( 'admin_init', 'hamburger_theme_add_editor_styles' );
+    add_action('after_setup_theme', 'hamburger_theme_add_editor_styles');
 
     /* カテゴリー編集画面にカスタムフィールドを追加 */
     function add_category_custom_fields($tag) {
@@ -89,8 +90,9 @@
     $html = preg_replace('/\bcurrent\b/', 'p-pagenation__notspList c-pageNamber--this', $html);
     $html = preg_replace('/\bpage larger\b/', 'p-pagenation__notspList c-roboto', $html);
     $html = preg_replace('/\bpage smaller\b/', 'p-pagenation__notspList c-roboto', $html);
-
+    $html = preg_replace('/\bfirst\b/', 'p-pagenation__notspList c-roboto', $html);
+    $html = preg_replace('/\blast\b/', 'p-pagenation__notspList c-roboto', $html);
+    $html = preg_replace('/\bextend\b/', 'p-pagenation__extend c-roboto', $html);
     return $html;
 }
 add_filter('wp_pagenavi', 'custom_pagenavi_html');
-
