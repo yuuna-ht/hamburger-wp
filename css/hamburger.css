@@ -992,7 +992,7 @@ body.is-open {
 
 /* メインビジュアル */
 .p-mainVisual, .p-mainVisual--single, .p-mainVisual--page, .p-mainVisual--archive {
-  background-image: url(../images/mainVisual-front.jpg);
+  background-image: url(../images/mainVisual-front.png);
   height: 285px;
 }
 @media (min-width: 1025px) {
@@ -1090,14 +1090,7 @@ body.is-open {
 .p-mainVisual--page {
   background-image: url(../images/mainVisual-page.jpg);
 }
-.p-mainVisual--page__title {
-  margin-left: 45px;
-}
-@media (min-width: 600px) {
-  .p-mainVisual--page__title {
-    margin-left: 86px;
-  }
-}
+
 
 /* フロントページ アクセス */
 .p-access {
@@ -1337,10 +1330,6 @@ body.is-open {
 @media (min-width: 600px) {
   .p-card__text {
     font-size: clamp(1.2rem, 2vw, 1.6rem);
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 }
 @media (min-width: 1025px) {
@@ -1363,6 +1352,9 @@ body.is-open {
   .p-card__button {
     padding: 22px 19%;
   }
+}
+.p-card__errorMessage {
+  margin-top: 10px;
 }
 
 /* アーカイブ・アーカイブサーチページ イントロダクション */
@@ -1595,9 +1587,6 @@ body.is-open {
     margin-bottom: 60px;
   }
 }
-.p-article .size-full img {
-  width: 100vw;
-}
 .p-article .wp-block-media-text {
   margin-bottom: 30px;
 }
@@ -1622,6 +1611,7 @@ body.is-open {
 .p-article blockquote {
   padding: 30px 18px;
   margin-bottom: 30px;
+  border-left: none;
 }
 @media (min-width: 600px) {
   .p-article blockquote {
@@ -1665,71 +1655,172 @@ body.is-open {
   }
 }
 
+/* タグの非表示 */
+.p-content-hidden {
+  display: none;
+}
+
 /* --- 404 page --- */
 .p-mainVisual--404 {
   background-image: url(../images/mainVisual-front.jpg);
-  height: 285px;
+  height: 100px;
   text-align: center;
 }
-.p-mainVisual--404 {
-  @media (min-width: 1025px) {
-    height: 27.6vw; /* 画面幅1%に対する高さを設定 画面幅に応じて高さを調整する */
-    min-height: 285px;
+@media (min-width: 790px) {
+  .p-mainVisual--404 {
+    height: 200px;
   }
 }
 .p-mainVisual__title--404 {
-  font-size: 8vw;
+  font-size: 3.0rem;
   color: white;
   line-height: 1.48;
   transition: all 0.4s ease-in;
   margin: 0 auto;
 }
-.p-mainVisual__title--404 {
-  @media (min-width: 1025px) {
-      font-size: 6vw;
-      line-height: 1.475;
+@media (min-width: 790px) {
+  .p-mainVisual__title--404 {
+    font-size: 6.3rem;
+    line-height: 1.475;
   }
 }
 .p-404__wrapper {
   text-align: center;
 }
 .p-404__article {
-  padding: 50px 0 60px;
+  padding: 30px 0 60px;
 }
-.p-404__article {
-  @media (min-width: 1025px) {
-    padding: 80px 0 200px;
+@media (min-width: 790px) {
+  .p-404__article {
+    padding: 50px 0 200px;
   }
 }
-
 .p-404__title {
-  font-size: 3rem;
-  margin-bottom: 50px;
+  font-size: 2.0rem;
+  margin-bottom: 15px;
+}
+@media (min-width: 600px) {
+  .p-404__title {
+    font-size: 4vw;
+  }
+}
+@media (min-width: 1025px) {
+  .p-404__title {
+    font-size: 3vw;
+  }
 }
 .p-404__text {
-  font-size: 2rem;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+}
+@media (min-width: 600px) {
+  .p-404__text {
+    font-size: 2.4vw;
+  }
 }
 .p-article__button--404 {
-  width: 100%;
-  height: 24.1vw;
-  border-radius: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  width: 60%;
+  height: 15vw;
+  border-radius: 40px;
+  box-shadow: 0 10px #707070;
 }
 @media (min-width: 600px) {
   .p-article__button--404 {
-    width: 60.1%;
-    height: 14.5vw;
+    width: 50%;
+    height: 12vw;
   }
 }
 @media (min-width: 1025px) {
   .p-article__button--404 {
-    width: 31.7%;
-    height: 7.6vw;
+    height: 10vw;
   }
 }
+.p-article__button--404:hover {
+  box-shadow: 0 5px #707070;
+  opacity: 1;
+  transform: translateY(5px);
+}
+.p-article__button--404:active {
+  box-shadow: 0 5px #707070;
+  opacity: 1;
+  transform: translateY(5px);
+}
+
 .p-404__homeLink {
   color: #3C2A10;
-  font-size: 150%;
-  text-decoration: underline;
+  font-size: 5vw;
 }
+@media (min-width: 600px) {
+  .p-404__homeLink {
+    font-size: 200%;
+  }
+}
+.p-404__homeLink:hover {
+  opacity: 1;
+}
+
+/* --- 推奨スタイル --- */
+.wp-caption {
+  font-size: 1.3rem
+}
+.wp-caption-text {
+  margin-top: -20px;
+}
+.sticky {
+  padding: 20px;
+  background: #FFFFFF;
+}
+.gallery-caption {
+  font-size: 1.3rem
+}
+.bypostauthor {
+  padding: 20px;
+  background: #f0f8ff;
+}
+.alignright {
+  float: right;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.alignleft {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.aligncenter {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+      white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+
 /*# sourceMappingURL=style.css.map */

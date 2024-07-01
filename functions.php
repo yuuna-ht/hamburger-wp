@@ -1,17 +1,46 @@
 <?php
-    /* 翻訳ファイル読み込み */
-    function hamburger_theme_setup(){
-        load_theme_textdomain( 'hamburger', get_template_directory() . '/languages' );
-        }
-    add_action( 'after_setup_theme', 'hamburger_theme_setup' );    
+    // 翻訳ファイル読み込み
+    function hamburger_theme_setup() {
+        load_theme_textdomain('hamburger', get_template_directory().'/languages');
+    }
+    add_action('after_setup_theme', 'hamburger_theme_setup');
 
     /* テーマサポート */
-    //  カスタムメニューの有効化
-    add_theme_support( 'menus' );
     //  管理画面からタイトルタグを登録可能にする
     add_theme_support( 'title-tag' );
     //  投稿ページのアイキャッチ画像のサポートを有効化
     add_theme_support( 'post-thumbnails' );
+    //  投稿とコメントのRSSフィードを有効に
+    add_theme_support( 'automatic-feed-links' );
+    //  カスタムロゴをサポートする
+    add_theme_support('custom-logo', array(
+        'height'      => 50,
+        'width'       => 50,
+        'flex-height' => true,  //画像が指定したサイズを超えても自動的にリサイズ
+        'flex-width'  => true,  //画像が指定したサイズを超えても自動的にリサイズ
+    ));
+    //  テーマカスタマイザーでヘッダー画像を設定可能にする
+    add_theme_support( "custom-header" );
+    //  ブロックエディター（Gutenberg）で使用されるブロックスタイルを登録する
+    add_theme_support('wp-block-styles');
+    //  レスポンシブな埋め込みコンテンツをサポート
+    add_theme_support('responsive-embeds');
+    //  HTML5の新しい要素や属性をサポート
+    add_theme_support( 'html5', array(
+        'comment-list',
+        'comment-form',
+        'search-form',
+        'gallery',
+        'caption',
+        'style',
+        'script',
+    ) );
+    //  「全幅」（Wide Alignment）と呼ばれるブロックの配置オプションをサポート
+    add_theme_support('align-wide');
+    //  カスタム背景機能を追加、管理画面から簡単に背景画像や色を設定できるようになる
+    add_theme_support('custom-background');
+
+    
 
     /*  管理画面からメニュー登録をする  */
     function hamburger_menus() {
@@ -59,7 +88,7 @@
     function add_category_custom_fields($tag) {
         $term_id = $tag->term_id;
         $category_subtitle = get_term_meta($term_id, 'category_subtitle', true);
-        ?>
+        ?>  <!-- PHP終了タグ 下記へHTMLを記述する -->
         <tr class="form-field">
             <th scope="row" valign="top"><label for="category_subtitle">小見出し</label></th>
             <td>
@@ -71,8 +100,8 @@
     }
     add_action('edit_category_form_fields', 'add_category_custom_fields');
 
-    // カテゴリーのカスタムフィールドを保存
-        function save_category_custom_fields($term_id) {
+    /* カテゴリー編集画面のカスタムフィールドを保存 */
+    function save_category_custom_fields($term_id) {
         if (isset($_POST['category_subtitle'])) {
             update_term_meta($term_id, 'category_subtitle', sanitize_text_field($_POST['category_subtitle']));
         }
@@ -96,3 +125,12 @@
     return $html;
 }
 add_filter('wp_pagenavi', 'custom_pagenavi_html');
+
+/* cardの小見出しで使用 投稿の最初のブロックを取得 */
+function get_first_block_content($content) {
+    $blocks = parse_blocks($content);       //投稿の本文コンテンツを解析し各ブロックを$blocks配列に格納
+    if (!empty($blocks)) {                  //$blocks配列が空でないことを確認
+        return render_block($blocks[0]);    //最初のブロックをレンダリングするためにrender_block()関数を使用。$blocks[0]は$blocks配列の最初の要素であり投稿の最初のブロックを示す
+    }
+    return '';                              //$blocks配列が空であれば空の文字列を返す
+}
