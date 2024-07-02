@@ -8,14 +8,19 @@
             $post_excerpt = get_the_excerpt();  // 投稿の抜粋
             $post_content = get_the_content();  // // 投稿の内容
             $first_block_content = get_first_block_content($post_content);  // 現在の投稿の内容から最初のブロックを取得するカスタム関数
-            ?>
+            
+            // アイキャッチ画像がない場合はデフォルト画像を表示
+            if (!$post_thumbnail_url) {
+                $post_thumbnail_url = esc_url(get_template_directory_uri() . '/images/mainVisual-front.png');
+            }
+        ?>
             <li class="p-card__menuList">
                 <figure class="p-card">
                     <img class="p-card__image" src="<?php echo esc_url($post_thumbnail_url); ?>" alt="<?php echo esc_attr($post_title); ?>">    <!-- 投稿のアイキャッチ画像を表示 -->
                     <figcaption class="p-card__content">
                         <div class="p-card__textBox">
                             <h3 class="p-card__title c-bold"><?php echo esc_html($post_title); ?></h3>  <!-- 投稿のタイトルを見出しとして使用 -->
-                            <div class="p-card__title-sub c-bold"><?php echo wp_kses_post($first_block_content); ?></div>   <!-- 投稿の最初のブロックを小見出しとして使用 -->
+                            <div class="p-card__title-sub c-bold"><?php echo wp_kses_post( wp_trim_words( $first_block_content, 15, '...' )); ?></div>   <!-- 投稿の最初のブロックを小見出しとして使用 -->
                             <p class="p-card__text"><?php echo esc_html( wp_trim_words( $post_excerpt, 60, '...' ) ); ?></p>    <!-- 投稿の抜粋をテキストとして使用し、60文字以上は「…」で文字を省略 -->
                         </div>
                         <a class="p-card__button c-button--white c-bold" href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'Read More', 'hamburger' ); ?></a>  <!-- 投稿のリンクを出力 -->

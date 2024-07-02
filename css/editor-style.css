@@ -70,6 +70,10 @@ p {
         margin-bottom: 60px;
     }
 }
+a {
+    color: #4A6C9B;
+    text-decoration: underline;
+}
 
 /* リストのスタイリング */
 ul {

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hamburger\n"
-"POT-Creation-Date: 2024-07-01 03:59+0900\n"
-"PO-Revision-Date: 2024-07-01 04:00+0900\n"
+"POT-Creation-Date: 2024-07-01 21:28+0900\n"
+"PO-Revision-Date: 2024-07-01 21:29+0900\n"
 "Last-Translator: \n"
 "Language-Team: yuuna\n"
 "Language: ja\n"
@@ -38,7 +38,7 @@ msgstr "トップへ戻る"
 msgid "Read More"
 msgstr "詳しく見る"
 
-#: card.php:29 single.php:45
+#: card.php:29 single.php:25
 msgid "There are no articles to display."
 msgstr "表示する記事はありません。"
 
@@ -58,10 +58,17 @@ msgstr "ブランチメニューはありません。"
 msgid "There is no access section."
 msgstr "アクセスセクションはありません。"
 
-#: page.php:41
+#: page.php:24
 msgid "No posts to display."
 msgstr "表示する投稿はありません。"
 
-#: search.php:17
+#: search.php:15
 msgid "A list of search results will be displayed."
 msgstr "検索結果の一覧が表示されます。"
+
+#: searchform.php:2
+msgid "Search"
+msgstr "検索"
+
+#~ msgid "Search:"
+#~ msgstr "検索:"

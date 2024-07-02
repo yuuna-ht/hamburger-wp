@@ -1,12 +1,10 @@
 <?php get_header(); ?>
 
-
 <main class="l-main p-main c-main__grid">
-
     <!-- メインビジュアル -->
     <div class="p-mainVisual--archive c-mainVisual--left">
-        <h1 class="p-mainVisual--archive__title c-roboto">Search:</h1>
-        <p class="c-bold"><?php echo get_search_query(); ?></p> <!-- 検索フォームに入力したキーワードやフレーズを表示 -->
+    <h1 class="p-mainVisual--archive__title c-roboto">Search:</h1>
+        <p class="c-bold"><?php echo esc_html( get_search_query() ); ?></p> <!-- 検索フォームに入力したキーワードやフレーズを表示 -->
     </div>
 
     <!-- イントロダクション -->
@@ -25,10 +23,9 @@
         </section>
 
         <!-- ページネーション -->
-        <?php if (function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
+        <?php if ( function_exists( 'wp_pagenavi' ) ) { wp_pagenavi(); } ?>
 
     </div>
-
 </main>
 
 <?php get_sidebar(); ?>
