@@ -1,9 +1,13 @@
 @charset "UTF-8";
 
+/* ============================================================
+  foundation
+  ============================================================ */
+
+/* base */
 html {
   font-size: 62.5%;
 }
-
 body {
   width: 100%;
   font-size: 1.6rem;
@@ -14,309 +18,29 @@ body {
   overflow-x: hidden;
   line-height: 1.5;
 }
-
 img {
   vertical-align: middle;
 }
-
 h1, h2, h3, h3, h4, h5, h6, p, figure {
   margin: 0;
   padding: 0;
   font-size: 100%;
 }
-
 ul, ol {
   list-style-type: none;
 }
-
 a {
   color: inherit;
   text-decoration: none;
 }
-
 a:hover, button:hover {
   opacity: 0.4;
 }
 
-/* resset.dev • v5.0.2 */
-/* # =================================================================
-   # Global selectors
-   # ================================================================= */
-html {
-  box-sizing: border-box;
-  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
-  word-break: normal;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-     tab-size: 4;
-}
-
-*,
-::before,
-::after {
-  background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
-  box-sizing: inherit;
-}
-
-::before,
-::after {
-  text-decoration: inherit; /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
-  vertical-align: inherit;
-}
-
-* {
-  padding: 0; /* Reset `padding` and `margin` of all elements */
-  margin: 0;
-}
-
-/* # =================================================================
-   # General elements
-   # ================================================================= */
-hr {
-  overflow: visible; /* Show the overflow in Edge and IE */
-  height: 0; /* Add the correct box sizing in Firefox */
-  color: inherit; /* Correct border color in Firefox. */
-}
-
-details,
-main {
-  display: block; /* Render the `main` element consistently in IE. */
-}
-
-summary {
-  display: list-item; /* Add the correct display in all browsers */
-}
-
-small {
-  font-size: 80%; /* Set font-size to 80% in `small` elements */
-}
-
-[hidden] {
-  display: none; /* Add the correct display in IE */
-}
-
-abbr[title] {
-  border-bottom: none; /* Remove the bottom border in Chrome 57 */
-  /* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
-  text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-}
-
-a {
-  background-color: transparent; /* Remove the gray background on active links in IE 10 */
-}
-
-a:active,
-a:hover {
-  outline-width: 0; /* Remove the outline when hovering in all browsers */
-}
-
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace; /* Specify the font family of code elements */
-}
-
-pre {
-  font-size: 1em; /* Correct the odd `em` font sizing in all browsers */
-}
-
-b,
-strong {
-  font-weight: bolder; /* Add the correct font weight in Chrome, Edge, and Safari */
-}
-
-/* https://gist.github.com/unruthless/413930 */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-table {
-  border-color: inherit; /* Correct border color in all Chrome, Edge, and Safari. */
-  text-indent: 0; /* Remove text indentation in Chrome, Edge, and Safari */
-}
-
-iframe {
-  border-style: none;
-}
-
-/* # =================================================================
-   # Forms
-   # ================================================================= */
-input {
-  border-radius: 0;
-}
-
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
-  height: auto; /* Correct the cursor style of increment and decrement buttons in Chrome */
-}
-
-[type=search] {
-  -webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari */
-  outline-offset: -2px; /* Correct the outline style in Safari */
-}
-
-[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none; /* Remove the inner padding in Chrome and Safari on macOS */
-}
-
-textarea {
-  overflow: auto; /* Internet Explorer 11+ */
-  resize: vertical; /* Specify textarea resizability */
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  font: inherit; /* Specify font inheritance of form elements */
-}
-
-optgroup {
-  font-weight: bold; /* Restore the font weight unset by the previous rule */
-}
-
-button {
-  overflow: visible; /* Address `overflow` set to `hidden` in IE 8/9/10/11 */
-}
-
-button,
-select {
-  text-transform: none; /* Firefox 40+, Internet Explorer 11- */
-}
-
-/* Apply cursor pointer to button elements */
-button,
-[type=button],
-[type=reset],
-[type=submit],
-[role=button] {
-  cursor: pointer;
-}
-
-/* Remove inner padding and border in Firefox 4+ */
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-/* Replace focus style removed in the border reset above */
-button:-moz-focusring,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  outline: 1px dotted ButtonText;
-}
-
-button,
-html [type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button; /* Correct the inability to style clickable types in iOS */
-}
-
-/* Remove the default button styling in all browsers */
-button,
-input,
-select,
-textarea {
-  background-color: transparent;
-  border-style: none;
-}
-
-a:focus,
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-  outline-width: 0;
-}
-
-/* Style select like a standard input */
-select {
-  -moz-appearance: none; /* Firefox 36+ */
-  -webkit-appearance: none; /* Chrome 41+ */
-}
-
-select::-ms-expand {
-  display: none; /* Internet Explorer 11+ */
-}
-
-select::-ms-value {
-  color: currentColor; /* Internet Explorer 11+ */
-}
-
-legend {
-  border: 0; /* Correct `color` not being inherited in IE 8/9/10/11 */
-  color: inherit; /* Correct the color inheritance from `fieldset` elements in IE */
-  display: table; /* Correct the text wrapping in Edge and IE */
-  max-width: 100%; /* Correct the text wrapping in Edge and IE */
-  white-space: normal; /* Correct the text wrapping in Edge and IE */
-  max-width: 100%; /* Correct the text wrapping in Edge 18- and IE */
-}
-
-::-webkit-file-upload-button {
-  /* Correct the inability to style clickable types in iOS and Safari */
-  -webkit-appearance: button;
-  color: inherit;
-  font: inherit; /* Change font properties to `inherit` in Chrome and Safari */
-}
-
-/* Replace pointer cursor in disabled elements */
-[disabled] {
-  cursor: default;
-}
-
-/* # =================================================================
-   # Specify media element style
-   # ================================================================= */
-img {
-  border-style: none; /* Remove border when inside `a` element in IE 8/9/10 */
-}
-
-/* Add the correct vertical alignment in Chrome, Firefox, and Opera */
-progress {
-  vertical-align: baseline;
-}
-
-/* # =================================================================
-   # Accessibility
-   # ================================================================= */
-/* Specify the progress cursor of updating elements */
-[aria-busy=true] {
-  cursor: progress;
-}
-
-/* Specify the pointer cursor of trigger elements */
-[aria-controls] {
-  cursor: pointer;
-}
-
-/* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
-[aria-disabled=true] {
-  cursor: default;
-}
-
-/* ヘッダーのレイアウト */
+/* ============================================================
+  layout
+  ============================================================ */
+/* header layout */
 .l-header {
   display: flex;
   flex-direction: column;
@@ -338,18 +62,17 @@ progress {
   }
 }
 
-/* メインのレイアウト */
+/* main　layout */
 .l-main, .l-main--single {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
 .l-main--single {
   justify-content: flex-start;
 }
 
-/* サイドバーのレイアウト */
+/* sidebar　layout */
 .l-sidebar {
   position: fixed;
   z-index: 10;
@@ -378,11 +101,12 @@ progress {
   right: 0;
 }
 
+/* sidebar縦スクロール時bodyは固定 */
 body.is-open {
   position: fixed;
 }
 
-/* フッターのレイアウト */
+/* footer layout */
 .l-footer {
   display: flex;
   flex-direction: column;
@@ -400,7 +124,11 @@ body.is-open {
   }
 }
 
-/* サイト全体のグリッドフレームレイアウト */
+/* ============================================================
+  object / component
+ ============================================================ */
+
+/* grid layout */
 .c-header__grid {
   grid-row: 1;
   grid-column: 1/3;
@@ -411,7 +139,6 @@ body.is-open {
     grid-column: 1;
   }
 }
-
 .c-main__grid {
   grid-row: 2;
   grid-column: 1/3;
@@ -422,7 +149,6 @@ body.is-open {
     grid-column: 1;
   }
 }
-
 .c-sidebar__grid {
   grid-row: 1/4;
   grid-column: 2;
@@ -433,7 +159,6 @@ body.is-open {
     grid-column: 2;
   }
 }
-
 .c-footer__grid {
   grid-row: 3;
   grid-column: 1/3;
@@ -444,35 +169,37 @@ body.is-open {
   }
 }
 
+/* font */
 .c-roboto {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
-
 .c-bold {
   font-weight: 700;
 }
 
+/* reader text */
 .c-readerText {
   display: none;
 }
 
+/* button */
 .c-button--gray {
   background: linear-gradient(90deg, #F2EDE9 0%, #DED8D3 100%);
   border: 1px solid #707070;
 }
-
 .c-button--white {
   background-color: #FFFFFF;
   border-radius: 25px;
 }
 
+/* 検索box */
 .c-input {
   border-radius: 10px;
   border: 1px solid #707070;
 }
 
-/* メインビジュアルの背景画像・フレックス設定 */
+/* front,single,pageページ メインビジュアルの背景画像・フレックス設定 */
 .c-mainVisual {
   background-position: center;
   background-size: cover;
@@ -480,6 +207,7 @@ body.is-open {
   align-items: center;
 }
 
+/* archive,searchページ　メインビジュアルの背景画像・フレックス設定 */
 .c-mainVisual--left {
   background-position: left;
   background-size: initial;
@@ -498,7 +226,7 @@ body.is-open {
   }
 }
 
-/* メインのラッパー部分の左右余白 */
+/* main ラッパー部分の左右余白 */
 .c-wrapper {
   width: 89%;
   margin: 0 auto;
@@ -520,26 +248,23 @@ body.is-open {
   background-size: cover;
 }
 
-.c-margin--top {
-  margin-top: 30px;
-}
-@media (min-width: 600px) {
-  .c-margin--top {
-    margin-top: 60px;
-  }
-}
-
 /* アンダーラインのあるリンク */
 .c-link {
   text-decoration: underline;
 }
 
-.c-list--ordered {
-  list-style-type: decimal;
-  list-style-position: inside;
+/* ページネーション　現在のページ */
+.c-pageNamber--this {
+  background-color: #3C2A10;
+  color: #FFFFFF;
+  pointer-events: none;
 }
 
-/* サイト全体のフレームレイアウト */
+/* ============================================================
+  object / project
+ ============================================================ */
+
+/* grid layout */
 .p-container {
   height: 100vh;
   width: 100vw;
@@ -560,7 +285,7 @@ body.is-open {
   }
 }
 
-/* ヘッダーの背景色 */
+/* header */
 .p-header {
   background-color: #FFF8EF;
 }
@@ -608,7 +333,7 @@ body.is-open {
   }
 }
 
-/* サイドバー */
+/* sidebar */
 .p-sidebar {
   background: #F2EDE9;
   color: #707070;
@@ -717,7 +442,7 @@ body.is-open {
   margin-bottom: 0;
 }
 
-/* サイドバー出現時のオーバーレイ */
+/* sidebar出現時のオーバーレイ */
 .p-overlay {
   position: fixed;
   z-index: 5;
@@ -759,7 +484,6 @@ body.is-open {
 .p-searchForm__submit:hover {
   opacity: 0.6;
 }
-
 .p-searchBox {
   position: relative;
 }
@@ -790,12 +514,12 @@ body.is-open {
   height: 24px;
 }
 
-/* メインの背景色 */
+/* main 背景色 */
 .p-main {
   background-color: #FFFDFB;
 }
 
-/* フロントページ ブランチメニュー */
+/* frontページ ブランチメニュー */
 .p-branchMenu {
   padding: 20px 0 49px;
   display: flex;
@@ -838,14 +562,8 @@ body.is-open {
     padding: 24px 0 16px;
   }
 }
-.p-branchMenu__list.--takeOut {
-  background-image: url(../images/takeOut.jpg);
-}
 .p-branchMenu__list.--takeOut .p-branchMenu__title {
   color: #EAEAEA;
-}
-.p-branchMenu__list.--eatIn {
-  background-image: url(../images/eatIn.jpg);
 }
 .p-branchMenu__title {
   font-size: 4.1rem;
@@ -945,10 +663,12 @@ body.is-open {
   }
 }
 
-/* フッターの背景色 */
+/* footer 背景色 */
 .p-footer {
   background-image: url(../images/footer.png);
 }
+
+/* footer */
 .p-footer__nav {
   display: flex;
   justify-content: center;
@@ -992,7 +712,6 @@ body.is-open {
 
 /* メインビジュアル */
 .p-mainVisual, .p-mainVisual--single, .p-mainVisual--page, .p-mainVisual--archive {
-  background-image: url(../images/mainVisual-front.png);
   height: 285px;
 }
 @media (min-width: 1025px) {
@@ -1020,6 +739,7 @@ body.is-open {
   }
 }
 
+/* archiveページ　メインビジュアル */
 .p-mainVisual--archive {
   background-image: url(../images/mainVisual-archive.jpg);
 }
@@ -1064,6 +784,7 @@ body.is-open {
   }
 }
 
+/* single・pageページ　メインビジュアル */
 .p-mainVisual--single, .p-mainVisual--page {
   background-size: 150%;
   height: 225px;
@@ -1087,12 +808,7 @@ body.is-open {
   }
 }
 
-.p-mainVisual--page {
-  background-image: url(../images/mainVisual-page.jpg);
-}
-
-
-/* フロントページ アクセス */
+/* frontページ アクセス */
 .p-access {
   position: relative;
   background-color: #000000;
@@ -1196,7 +912,7 @@ body.is-open {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* アーカイブ・アーカイブサーチページ メインコンテンツンツ幅・余白調整 */
+/* archive・searchページ メインコンテンツンツ幅・余白調 */
 @media (min-width: 600px) {
   .p-archive {
     min-width: 560px;
@@ -1221,12 +937,11 @@ body.is-open {
   }
 }
 
-/* アーカイブ メニューカード */
+/* archive・searchページ メニューカード */
 .p-card {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: ;
   background-color: #3C2B1C;
 }
 @media (min-width: 600px) {
@@ -1370,7 +1085,7 @@ body.is-open {
   margin-top: 10px;
 }
 
-/* アーカイブ・アーカイブサーチページ イントロダクション */
+/* archive・searchページ イントロダクション */
 .p-introduction__title {
   font-size: 2.8rem;
   margin-bottom: 25px;
@@ -1509,13 +1224,8 @@ body.is-open {
   background-color: rgba(112, 112, 112, 0.8);
   color: #FFFFFF;
 }
-.c-pageNamber--this {
-  background-color: #3C2A10;
-  color: #FFFFFF;
-  pointer-events: none;
-}
 
-/* 投稿・固定ページのアーティクル上下の余白調整 */
+/* single・pageページのアーティクル上下の余白調整 */
 .p-article {
   padding: 34px 0 69px;
 }
@@ -1530,7 +1240,7 @@ body.is-open {
   }
 }
 
-/* 投稿・固定記事のスタイル調整 */
+/* ---single・pageページ　投稿・記事のスタイル調整--- */
 /* リストのスタイリング */
 .p-article ul {
   margin-bottom: 30px;
@@ -1671,6 +1381,15 @@ body.is-open {
     margin-bottom: 60px;
   }
 }
+.p-article .wp-block-button a {
+  display: inline-block;
+  padding: 20px 0;
+}
+@media (min-width: 600px) {
+  .p-article .wp-block-button a {
+    padding: 30px 0;
+  }
+}
 
 /* タグの非表示 */
 .p-content-hidden {
@@ -1679,7 +1398,6 @@ body.is-open {
 
 /* --- 404 page --- */
 .p-mainVisual--404 {
-  background-image: url(../images/mainVisual-front.jpg);
   height: 100px;
   text-align: center;
 }
@@ -1762,7 +1480,6 @@ body.is-open {
   opacity: 1;
   transform: translateY(5px);
 }
-
 .p-404__homeLink {
   color: #3C2A10;
   font-size: 5vw;
@@ -1776,7 +1493,7 @@ body.is-open {
   opacity: 1;
 }
 
-/* --- 推奨スタイル --- */
+/* --- WP推奨スタイル --- */
 .wp-caption {
   font-size: 1.3rem
 }

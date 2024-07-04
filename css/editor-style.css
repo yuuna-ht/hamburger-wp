@@ -93,6 +93,7 @@ ol ol {
     margin: 17px 18px;
 }
 ul ul {
+    list-style-type: none;
     margin: 17px 18px;
 }
 
@@ -174,8 +175,16 @@ pre {
         margin-bottom: 60px;
     }
 }
+.wp-block-button div {
+    padding: 20px 0;
+}
+@media (min-width: 600px) {
+    .wp-block-button div {
+        padding: 30px 0;
+    }
+}
 
-/* --- 推奨スタイル --- */
+/* --- WP推奨スタイル --- */
 .wp-caption {
     font-size: 1.3rem
 }
