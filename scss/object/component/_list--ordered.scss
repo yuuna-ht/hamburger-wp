@@ -1,6 +1,0 @@
-@use "../../foundation/global" as *;
-
-.c-list--ordered {  //要素内に収まる設定、数値スタイルの<ol>タグ
-    list-style-type: decimal;
-    list-style-position: inside;
-}

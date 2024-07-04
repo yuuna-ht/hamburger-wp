@@ -332,6 +332,9 @@ body.is-open {
     padding: 4.5px 0;
   }
 }
+.p-header__logo a {
+  cursor: url(../images/cursor.png), auto;
+}
 
 /* sidebar */
 .p-sidebar {
@@ -901,7 +904,7 @@ body.is-open {
 }
 .p-access__text >a {
   text-decoration: underline;
-  
+  color: aqua;
 }
 .p-access .p-map__overlay {
   position: absolute;
@@ -1225,7 +1228,7 @@ body.is-open {
   color: #FFFFFF;
 }
 
-/* single・pageページのアーティクル上下の余白調整 */
+/* single・pageページ　アーティクル上下の余白調整 */
 .p-article {
   padding: 34px 0 69px;
 }
@@ -1238,6 +1241,38 @@ body.is-open {
   .p-article {
     padding: 63px 0 274px;
   }
+}
+
+/* single・pageページ　ページネーション */
+.p-article-pagenation {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+  margin: 0 0 64px;
+  height: 35px;
+  color: #707070;
+}
+.p-article-pagenation span.post-page-numbers {
+  background-color: #3C2A10;
+  color: #FFFFFF;
+  pointer-events: none;
+}
+.p-article-pagenation__notspList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #707070;
+}
+.p-article-pagenation a.post-page-numbers {
+  text-decoration: none;
+  color: #3C2A10;
+}
+.p-article-pagenation__notspList:hover {
+  background-color: rgba(112, 112, 112, 0.8);
+  color: #FFFFFF;
 }
 
 /* ---single・pageページ　投稿・記事のスタイル調整--- */
@@ -1270,7 +1305,6 @@ body.is-open {
 @media (min-width: 600px) {
   .p-article h2 {
     font-size: 3.6rem;
-    margin-bottom: 60px;
   }
 }
 .p-article h3 {
@@ -1280,25 +1314,14 @@ body.is-open {
 @media (min-width: 600px) {
   .p-article h3 {
     font-size: 2.8rem;
-    margin-bottom: 60px;
   }
 }
 .p-article h4, .p-article h5, .p-article h6 {
   font-size: 2rem;
   margin-bottom: 30px;
 }
-@media (min-width: 600px) {
-  .p-article h4, .p-article h5, .p-article h6 {
-    margin-bottom: 60px;
-  }
-}
 .p-article p {
   margin-bottom: 30px;
-}
-@media (min-width: 600px) {
-  .p-article p {
-    margin-bottom: 60px;
-  }
 }
 .p-article a {
   color: #4A6C9B;
@@ -1309,26 +1332,11 @@ body.is-open {
 .p-article figure {
   margin-bottom: 30px;
 }
-@media (min-width: 600px) {
-  .p-article figure {
-    margin-bottom: 60px;
-  }
-}
 .p-article .wp-block-media-text {
   margin-bottom: 30px;
 }
-@media (min-width: 600px) {
-  .p-article .wp-block-media-text {
-    margin-bottom: 60px;
-  }
-}
 .p-article .wp-block-gallery {
   margin-bottom: 30px;
-}
-@media (min-width: 600px) {
-  .p-article .wp-block-gallery {
-    margin-bottom: 60px;
-  }
 }
 .p-particle .wp-block-gallery .wp-block-image > img {
   margin-bottom: 0;
@@ -1343,17 +1351,11 @@ body.is-open {
 @media (min-width: 600px) {
   .p-article blockquote {
     padding: 50px 60px;
-    margin-bottom: 60px;
   }
 }
 .p-article cite {
   font-style: normal;
   margin-top: 30px;
-}
-@media (min-width: 600px) {
-  .p-article cite {
-    margin-top: 60px;
-  }
 }
 .p-article cite > a {
   color: #4A6C9B;
@@ -1366,20 +1368,10 @@ body.is-open {
   font-family: "M PLUS 1p", sans-serif;
   margin-bottom: 30px;
 }
-@media (min-width: 600px) {
-  .p-article pre {
-    margin-bottom: 60px;
-  }
-}
 
 /* ボタンのスタイリング */
 .p-article .wp-block-button {
   margin-bottom: 30px;
-}
-@media (min-width: 600px) {
-  .p-article .wp-block-button {
-    margin-bottom: 60px;
-  }
 }
 .p-article .wp-block-button a {
   display: inline-block;
