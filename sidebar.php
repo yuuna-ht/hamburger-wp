@@ -6,7 +6,7 @@
     </button>
     <h2 class="p-sidebar__menu c-roboto"><?php esc_html_e( 'Menu', 'hamburger' ); ?></h2>
     <?php
-    wp_nav_menu( array(     // カスタムメニューの表示
+    wp_nav_menu( array( // カスタムメニューの表示
         'theme_location' => 'sidebar_menu', // 'sidebar_menu'というテーマの位置に登録されたメニューを表示
         'container' => false,               // ここでのメニューを囲むコンテナは<aside>要素のため、余分コンテナ要素を出力しない
         'menu_class' => 'p-menu',           // メニューのul要素に'p-menu'というクラスを指定→CSSでスタイルを設定可に

@@ -1,7 +1,6 @@
 <div class="p-article__wrapper c-wrapper">
     <article class="p-article">
-        <!-- articleタグ内で投稿の内容を表示 -->
-        <?php the_content(); ?>
+        <?php the_content(); // articleタグ内で投稿の内容を表示 ?>
     </article>
         <?php
         $args = array(

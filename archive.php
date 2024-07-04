@@ -20,7 +20,7 @@
             $category_subtitle = get_term_meta($category->term_id, 'category_subtitle', true);  //現在のカテゴリーのタームIDを元に、指定したタームのカスタムフィールド(ここではcategory_subtitle)を取得。取得したいカスタムフィールドの値が単一の場合はtrueを指定。
             ?>
             <h2 class="p-introduction__title c-bold"><?php echo esc_html($category_subtitle); ?></h2>
-            <p class="p-introduction__text"><?php echo wp_kses_post(category_description($category->term_id)); ?></p>   <!-- $category->term_idを使って、そのカテゴリーの説明を取得 -->
+            <p class="p-introduction__text"><?php echo wp_kses_post(category_description($category->term_id)); // $category->term_idを使って、そのカテゴリーの説明を取得 ?></p>
 
             <!-- メニューカード -->
             <?php get_template_part('card'); ?>
@@ -28,7 +28,7 @@
         </section>
 
         <!-- ページネーション -->
-        <?php if (function_exists('wp_pagenavi')) { wp_pagenavi(); } ?> <!-- wp_pagenaviプラグインが有効かどうかを確認し、有効であればページネーションを表示 -->
+        <?php if (function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
 
     </div>
 </main>

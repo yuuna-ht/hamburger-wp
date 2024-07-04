@@ -4,7 +4,7 @@
     <!-- メインビジュアル -->
     <div class="p-mainVisual--archive c-mainVisual--left">
     <h1 class="p-mainVisual--archive__title c-roboto">Search:</h1>
-        <p class="c-bold"><?php echo esc_html( get_search_query() ); ?></p> <!-- 検索フォームに入力したキーワードやフレーズを表示 -->
+        <p class="c-bold"><?php echo esc_html( get_search_query() ); // 検索フォームに入力したキーワードやフレーズを表示 ?></p>
     </div>
 
     <!-- イントロダクション -->

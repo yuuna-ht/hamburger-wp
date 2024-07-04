@@ -7,14 +7,12 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>    <!-- プラグインや他のテーマ機能が<body>タグの直後にコンテンツを挿入できるようになる -->
-        <!-- サイドバー出現時のオーバーレイ -->
+    <?php wp_body_open(); //プラグインや他のテーマ機能が<body>タグの直後にコンテンツを挿入できるようになる ?>
         <div class="p-overlay js-menuEvent"></div>
-        <!-- サイト全体のグリッドレイアウト -->
         <div class="p-container">
             <!-- ヘッダー -->
             <header class="l-header p-header c-header__grid">
-                <button class="p-header__menu c-roboto js-nav__button">Menu</button>
+                <button class="p-header__menu c-roboto js-nav__button"><?php esc_html_e( 'Menu', 'hamburger'); ?></button>
                 <h1 class="p-header__logo c-roboto"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
                 <?php get_search_form(); ?>
             </header>

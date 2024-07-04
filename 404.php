@@ -26,9 +26,8 @@
     <?php
         endwhile;
         wp_reset_postdata();
-    else :
+    else : // 投稿が見つからない場合のデフォルト表示
         ?>
-        <!-- 投稿が見つからない場合のデフォルト表示 -->
         <div class="p-mainVisual c-mainVisual" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/images/mainVisual-front.png'); ?>');">
             <h2 class="p-mainVisual__title c-bold">Oops!<br> 404 - Page Not Found.</h2>
         </div>

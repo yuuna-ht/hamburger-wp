@@ -16,20 +16,19 @@
         ?>
             <li class="p-card__menuList">
                 <figure class="p-card">
-                    <img class="p-card__image" src="<?php echo esc_url($post_thumbnail_url); ?>" alt="<?php echo esc_attr($post_title); ?>">    <!-- 投稿のアイキャッチ画像を表示 -->
+                    <img class="p-card__image" src="<?php echo esc_url($post_thumbnail_url); ?>" alt="<?php echo esc_attr($post_title); // 投稿のアイキャッチ画像を表示 ?>">
                     <figcaption class="p-card__content">
                         <div class="p-card__textBox">
-                            <h3 class="p-card__title c-bold"><?php echo esc_html($post_title); ?></h3>  <!-- 投稿のタイトルを見出しとして使用 -->
-                            <div class="p-card__title-sub c-bold"><?php echo wp_kses_post( wp_trim_words( $first_block_content, 15, '...' )); ?></div>   <!-- 投稿の最初のブロックを小見出しとして使用 -->
-                            <p class="p-card__text"><?php echo esc_html( wp_trim_words( $post_excerpt, 60, '...' ) ); ?></p>    <!-- 投稿の抜粋をテキストとして使用し、60文字以上は「…」で文字を省略 -->
+                            <h3 class="p-card__title c-bold"><?php echo esc_html($post_title); // 投稿のタイトルを見出しとして使用 ?></h3>
+                            <div class="p-card__title-sub c-bold"><?php echo wp_kses_post( wp_trim_words( $first_block_content, 15, '...' )); // 投稿の最初のブロックを小見出しとして使用 ?></div>
+                            <p class="p-card__text"><?php echo esc_html( wp_trim_words( $post_excerpt, 60, '...' ) ); // 投稿の抜粋をテキストとして使用し、60文字以上は「…」で文字を省略 ?></p>
                         </div>
-                        <a class="p-card__button c-button--white c-bold" href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'Read More', 'hamburger' ); ?></a>  <!-- 投稿のリンクを出力 -->
+                        <a class="p-card__button c-button--white c-bold" href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'Read More', 'hamburger' ); // 投稿のリンクを出力 ?></a>
                     </figcaption>
                 </figure>
             </li>
         <?php endwhile; ?>
     </ul>
-<?php else : ?>
-    <!-- 投稿がない場合のメッセージ -->
+<?php else : //投稿がない場合のメッセージ ?>
     <p class=p-card__errorMessage><?php esc_html_e('There are no articles to display.', 'hamburger'); ?></p>
 <?php endif; ?>

@@ -7,10 +7,10 @@
     add_action( 'after_setup_theme', 'hamburger_theme_setup' );
 
     /* テーマサポート */
-    add_theme_support( 'title-tag' );   // テーマが自動的にページのタイトルを生成
-    add_theme_support( 'post-thumbnails' ); // 投稿ページのアイキャッチ画像のサポートを有効化
-    add_theme_support( 'automatic-feed-links' );    // 投稿とコメントのRSSフィードを有効に
-    add_theme_support('custom-logo', array( // カスタムロゴをサポートする
+    add_theme_support( 'title-tag' );            // テーマが自動的にページのタイトルを生成
+    add_theme_support( 'post-thumbnails' );      // 投稿ページのアイキャッチ画像のサポートを有効化
+    add_theme_support( 'automatic-feed-links' ); // 投稿とコメントのRSSフィードを有効に
+    add_theme_support('custom-logo', array(      // カスタムロゴをサポートする
         'height'      => 50,
         'width'       => 50,
         'flex-height' => true,  //画像が指定したサイズを超えても自動的にリサイズ
@@ -19,7 +19,7 @@
     add_theme_support( "custom-header" );   // テーマカスタマイザーでヘッダー画像を設定可能にする
     add_theme_support('wp-block-styles');   // ブロックエディター（Gutenberg）で使用されるブロックスタイルを登録する
     add_theme_support('responsive-embeds'); // レスポンシブな埋め込みコンテンツをサポート
-    add_theme_support( 'html5', array(  // HTML5の新しい要素や属性をサポート
+    add_theme_support( 'html5', array(      // HTML5の新しい要素や属性をサポート
         'comment-list',
         'comment-form',
         'search-form',
@@ -28,7 +28,7 @@
         'style',
         'script',
     ) );
-    add_theme_support('align-wide');    // 「全幅」（Wide Alignment）と呼ばれるブロックの配置オプションをサポート
+    add_theme_support('align-wide'); // 「全幅」（Wide Alignment）と呼ばれるブロックの配置オプションをサポート
     add_theme_support('custom-background'); // カスタム背景機能を追加、管理画面から簡単に背景画像や色を設定できるようになる
 
     /*  管理画面からメニュー登録をする  */
@@ -51,7 +51,7 @@
         }
             return $title;
         }
-    add_filter( 'pre_get_document_title', 'hamburger_title' );  // ページタイトルを生成する直前に呼び出され、条件に応じて異なるタイトルを設定
+    add_filter( 'pre_get_document_title', 'hamburger_title' ); // ページタイトルを生成する直前に呼び出され、条件に応じて異なるタイトルを設定
 
     /* Webフォント、CSS、JavaScriptの呼び出し */
     function hamburger_script() {
@@ -71,7 +71,7 @@
     /* エディター側でのスタイリングを有効に */
     function hamburger_theme_add_editor_styles() {
         add_theme_support('editor-styles'); //テーマがエディタースタイルをサポートすることを知らせる
-        add_editor_style('/css/editor-style.css');  //ブロックエディター用のスタイルシートを指定する
+        add_editor_style('/css/editor-style.css'); //ブロックエディター用のスタイルシートを指定する
     }
     add_action('after_setup_theme', 'hamburger_theme_add_editor_styles');
 
@@ -79,7 +79,7 @@
     function add_category_custom_fields($tag) {
         $term_id = $tag->term_id;
         $category_subtitle = get_term_meta($term_id, 'category_subtitle', true);
-        ?>  <!-- PHP終了タグ 下記へHTMLを記述する -->
+        ?>
         <tr class="form-field">
             <th scope="row" valign="top"><label for="category_subtitle">小見出し</label></th>
             <td>

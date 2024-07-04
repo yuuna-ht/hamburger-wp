@@ -26,9 +26,8 @@
     <?php
         endwhile;
         wp_reset_postdata();
-    else :
-        ?>
-        <!-- 投稿が見つからない場合のデフォルト表示 -->
+    else : // 投稿が見つからない場合のデフォルト表示
+    ?>
         <div class="p-mainVisual c-mainVisual" style="background-image: url('<?php echo esc_url(get_template_directory_uri() . '/images/mainVisual-front.png'); ?>');">
             <h2 class="p-mainVisual__title c-bold"><?php esc_html_e('Dummy Site', 'hamburger'); ?></h2>
         </div>
@@ -85,7 +84,7 @@
             <?php
                 endwhile;
                 wp_reset_postdata();
-            else :
+            else : // 投稿がない場合のメッセージ
                 echo '<p>' . esc_html_e('There is no brunch menu.', 'hamburger') . '</p>';
             endif;
             ?>
@@ -108,8 +107,7 @@
             $map_embed_code = get_field('map_embed_code');
     ?>
             <section class="p-access c-background__image" style="background-image: url('<?php echo esc_url(get_the_post_thumbnail_url()); ?>');">
-                <?php if ($map_embed_code) : ?>
-                    <!-- mapの埋め込みコードが存在する場合にはそれを表示 -->
+                <?php if ($map_embed_code) : // mapの埋め込みコードが存在する場合にはそれを表示 ?>
                     <div class="p-access__embedCode">
                         <?php echo $map_embed_code; ?>
                     </div>
@@ -124,7 +122,7 @@
     <?php
         endwhile;
         wp_reset_postdata();
-    else :
+    else : // 投稿がない場合のメッセージ
         echo '<p>' . esc_html_e('There is no access section.', 'hamburger') . '</p>';
     endif;
     ?>
