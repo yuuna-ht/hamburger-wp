@@ -10,7 +10,6 @@
     <?php wp_body_open(); //プラグインや他のテーマ機能が<body>タグの直後にコンテンツを挿入できるようになる ?>
         <div class="p-overlay js-menuEvent"></div>
         <div class="p-container">
-            <!-- ヘッダー -->
             <header class="l-header p-header c-header__grid">
                 <button class="p-header__menu c-roboto js-nav__button"><?php esc_html_e( 'Menu', 'hamburger'); ?></button>
                 <h1 class="p-header__logo c-roboto"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>

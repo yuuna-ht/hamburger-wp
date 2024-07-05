@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 
-<!-- メイン -->
 <main class="l-main p-main c-main__grid">
-    <!-- メインビジュアル -->
     <div class="p-mainVisual--archive c-mainVisual--left">
         <?php
         $prefix = 'Menu: '; //カテゴリー名の前につける$prefixという変数に'Menu:'という文字列を代入
@@ -12,7 +10,6 @@
         <p class="c-bold"><?php echo esc_html($cat_title); ?></p>
     </div>
 
-    <!-- イントロダクション -->
     <div class="p-archive c-wrapper">
         <section class="p-archive__main">
             <?php
@@ -22,12 +19,10 @@
             <h2 class="p-introduction__title c-bold"><?php echo esc_html($category_subtitle); ?></h2>
             <p class="p-introduction__text"><?php echo wp_kses_post(category_description($category->term_id)); // $category->term_idを使って、そのカテゴリーの説明を取得 ?></p>
 
-            <!-- メニューカード -->
             <?php get_template_part('card'); ?>
 
         </section>
 
-        <!-- ページネーション -->
         <?php if (function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
 
     </div>

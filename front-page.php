@@ -1,8 +1,7 @@
 <?php get_header(); ?>
 
 <main class="l-main p-main c-main__grid">
-    <!-- メインビジュアル -->
-    <?php
+    <?php   /* --- メインビジュアル --- */
     // カスタム投稿タイプの'main_visual'から投稿を1つ取得
     $args = array(
         'post_type' => 'main_visual',
@@ -35,7 +34,7 @@
     endif;
     ?>
 
-    <!-- ブランチメニュー -->
+    <?php /* --- ブランチメニュー --- */ ?>
     <div class="c-wrapper">
         <div class="p-branchMenu">
             <?php
@@ -91,8 +90,7 @@
         </div>
     </div>
 
-    <!-- アクセス -->
-    <?php
+    <?php /* --- アクセス --- */
     $args_access_section = array(
         // カスタム投稿タイプの'access_section'から投稿を1つ取得
         'post_type' => 'access_section',

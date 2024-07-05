@@ -1,6 +1,4 @@
-<!-- サイドバー全体（メニュー）のコンテナ -->
 <aside class="l-sidebar p-sidebar c-sidebar__grid">
-    <!-- サイドバーを閉じるボタン -->
     <button class="p-sidebar__closeButton js-menuEvent">
         <span><?php esc_html_e( 'Close Menu', 'hamburger' ); ?></span>
     </button>

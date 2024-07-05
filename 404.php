@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <main class="l-main--single p-main c-main__grid">
-<!-- メインビジュアル -->
     <?php
     // カスタム投稿タイプの'main_visual'から投稿を1つ取得
     $args = array(
@@ -34,7 +33,7 @@
     <?php
     endif;
     ?>
-    <!-- エラーメッセージ、ホームリンクボタン -->
+    <?php /* --- エラーメッセージ、ホームリンクボタン --- */ ?>
     <div class="p-404__wrapper c-wrapper">
         <article class="p-404__article">
             <h2 class="p-404__title"><?php esc_html_e('The page you are looking for could not be found.', 'hamburger'); ?>(T_T)</h2>
