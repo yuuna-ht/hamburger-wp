@@ -960,16 +960,11 @@ body.is-open {
   }
 }
 .p-card__menu {
-  margin-top: 19px;
+  margin-top: 5px;
 }
 @media (min-width: 600px) {
   .p-card__menu {
-    margin-top: 37px;
-  }
-}
-@media (min-width: 1025px) {
-  .p-card__menu {
-    margin-top: 70px;
+    margin-top: 15px;
   }
 }
 .p-card__menuList:not(:last-child) {
@@ -1096,8 +1091,12 @@ body.is-open {
 @media (min-width: 600px) {
   .p-introduction__title {
     font-size: 3.6rem;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
+}
+.p-card__errorMessage {
+  margin-top: 50px;
+  display: none;
 }
 
 /* ページネーション */

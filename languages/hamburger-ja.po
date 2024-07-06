@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: hamburger\n"
-"POT-Creation-Date: 2024-07-05 02:06+0900\n"
-"PO-Revision-Date: 2024-07-05 02:06+0900\n"
+"POT-Creation-Date: 2024-07-07 02:45+0900\n"
+"PO-Revision-Date: 2024-07-07 02:56+0900\n"
 "Last-Translator: \n"
 "Language-Team: yuuna\n"
 "Language: ja\n"
@@ -14,15 +14,15 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:40
+#: 404.php:39
 msgid "The page you are looking for could not be found."
 msgstr "お探しのページは見つかりませんでした。"
 
-#: 404.php:42
+#: 404.php:41
 msgid "The page you are looking for may have been moved or deleted."
 msgstr "お探しのページは移動または削除された可能性があります。"
 
-#: 404.php:43
+#: 404.php:42
 msgid ""
 "We apologize for the inconvenience, but please search again from the top "
 "page."
@@ -30,7 +30,7 @@ msgstr ""
 "ご不便をおかけして申し訳ありませんが、トップページからもう一度検索してく"
 "ださい。"
 
-#: 404.php:46
+#: 404.php:45
 msgid "Back to top"
 msgstr "トップへ戻る"
 
@@ -46,19 +46,19 @@ msgstr "表示する記事はありません。"
 msgid "Copyright: RaiseTech"
 msgstr "Copyright: RaiseTech"
 
-#: front-page.php:32
+#: front-page.php:31
 msgid "Dummy Site"
 msgstr "ダミーサイト"
 
-#: front-page.php:88
+#: front-page.php:87
 msgid "There is no brunch menu."
 msgstr "ブランチメニューはありません。"
 
-#: front-page.php:126
+#: front-page.php:124
 msgid "There is no access section."
 msgstr "アクセスセクションはありません。"
 
-#: header.php:15 sidebar.php:7
+#: header.php:14 sidebar.php:5
 msgid "Menu"
 msgstr "Menu"
 
@@ -67,14 +67,24 @@ msgid "No posts to display."
 msgstr "表示する投稿はありません。"
 
 #: search.php:15
+#, php-format
+msgid "Search results for \"%s\" are %d."
+msgstr "「%s」の検索結果は%d件です。"
+
+#: search.php:17
 msgid "A list of search results will be displayed."
 msgstr "検索結果の一覧が表示されます。"
+
+#: search.php:19
+#, php-format
+msgid "No results found for \"%s\"."
+msgstr "「%s」は見つかりませんでした。"
 
 #: searchform.php:2
 msgid "Search"
 msgstr "検索"
 
-#: sidebar.php:5
+#: sidebar.php:3
 msgid "Close Menu"
 msgstr "メニューを閉じる"
 
