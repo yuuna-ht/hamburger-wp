@@ -135,4 +135,14 @@ add_filter('wp_pagenavi', 'custom_pagenavi_html');
         }
     }
     add_action('pre_get_posts', 'filter_search_query');
+
+    /* 投稿と固定ページのコンテンツ内に含まれる <iframe> 要素を <div> 要素でラップする */
+    function wrap_iframes_in_div($content) {
+        // iframeをdivでラップするための正規表現
+        $pattern = '/<iframe(.*?)<\/iframe>/i';
+        $replacement = '<div class="iframe-container"><iframe$1</iframe></div>';
+        $content = preg_replace($pattern, $replacement, $content);
+        return $content;
+    }
+    add_filter('the_content', 'wrap_iframes_in_div');
     
