@@ -13,4 +13,4 @@ Webエンジニアリングスクール RaiseTech の WordPress副業コース�
 ## 使用スキル
 * CSS
 * WordPress / PHP
-* プラグイン：My Custom Post Types、Custom Upload Mimes、Custom Taxonomy、Advanced Custom Fields、WP-PageNavi
+* プラグイン：My Custom Post Types / Custom Upload Mimes / Custom Taxonomy / Advanced Custom Fields / WP-PageNavi
